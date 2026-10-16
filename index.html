@@ -1389,22 +1389,55 @@ ul { margin: 0; padding: 0; list-style: none; }
     input.focus();
   }
 
-  function saveSignup(email) {
-    if (!window.claude || typeof window.claude.use !== "function") return Promise.resolve();
-    if (!dbPromise) dbPromise = Promise.all([window.claude.use("db"), window.claude.use("user")]);
-    return dbPromise.then(function (r) {
-      var db = r[0];
-      if (!db) return;
-      var rec = recommend(answers);
-      var doc = {
-        email: email,
-        submittedAt: new Date().toISOString(),
-        answers: answers,
-        habits: rec.habits.map(function (h) { return h.t; }),
-        products: rec.products.map(function (p) { return p.title; })
-      };
-      return db.collection("signups").add(doc).catch(function () {});
+  // Where quiz submissions go when the live site runs on GitHub Pages or any plain host.
+  // Set up at https://formspree.io — change the id below if the form endpoint ever moves.
+  var FORMSPREE_URL = "https://formspree.io/f/mqpewogy";
+
+  function buildSubmission(email) {
+    var rec = recommend(answers);
+    var a = answers || {};
+    function j(x) { return Array.isArray(x) ? (x.length ? x.join(", ") : "none") : (x || "—"); }
+    return {
+      email: email,
+      submittedAt: new Date().toISOString(),
+      goals: j(a.goals),
+      diet: j(a.diet),
+      proteinFromFood: j(a.protein),
+      sleep: j(a.sleep),
+      skinConcerns: j(a.skinConcerns),
+      daylight: j(a.sun),
+      safetyFlags: j(a.safety),
+      priorityHabits: rec.habits.map(function (h) { return h.t; }).join(" | "),
+      productMatches: rec.products.map(function (p) { return p.title; }).join(" | "),
+      answers: answers,
+      habits: rec.habits.map(function (h) { return h.t; }),
+      products: rec.products.map(function (p) { return p.title; }),
+      _subject: "New Kalivae quiz signup: " + email,
+      _replyto: email
+    };
+  }
+
+  function postToFormspree(doc) {
+    if (!FORMSPREE_URL) return Promise.resolve();
+    return fetch(FORMSPREE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(doc)
     }).catch(function () {});
+  }
+
+  function saveSignup(email) {
+    var doc = buildSubmission(email);
+    var tasks = [postToFormspree(doc)];
+    if (window.claude && typeof window.claude.use === "function") {
+      if (!dbPromise) dbPromise = Promise.all([window.claude.use("db"), window.claude.use("user")]);
+      tasks.push(dbPromise.then(function (r) {
+        var db = r[0];
+        if (!db) return;
+        return db.collection("signups").add(doc).catch(function () {});
+      }).catch(function () {}));
+    }
+    return Promise.all(tasks).catch(function () {});
   }
 
   function renderResult(email) {
