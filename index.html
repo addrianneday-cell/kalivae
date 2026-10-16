@@ -1,0 +1,2019 @@
+<title>Kalivae Homepage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: an organic editorial page. Arched and pebble-shaped images, wave-edged
+   sage bands, soft paper grain. Ratings are hand-brushed gold, silver and bronze. */
+:root {
+  --bg: #F7F5F0;
+  --raised: #FFFFFF;
+  --sunken: #EEEAE2;
+  --ink: #15201D;
+  --muted: #4A5551;
+  --subtle: #626B67;
+  --line: #DCD6CB;
+  --line-strong: #8F887C;
+  --ok: #2D6A4F; --warn: #8A6514; --err: #A23B2C;
+  --brand: #1F4D45;
+  --brand-hover: #173B35;
+  --on-brand: #FFFFFF;
+  --sage: #DDE7E1;
+  --sage-deep: #CFDDD5;
+  --brass: #B08D57;
+  --brass-ink: #7A5A28;
+  --focus: #2F6F8F;
+  --deep: #1F4D45;
+  --on-deep: #F7F5F0;
+  --on-deep-muted: #C9D6CF;
+  --veil: rgba(247, 245, 240, 0.94);
+  --veil-0: rgba(247, 245, 240, 0);
+  --grain-opacity: .05;
+
+  /* Metals: identical in both themes, always read with dark ink */
+  --metal-ink: #15201D;
+  --gold-1: #B8964F; --gold-2: #EDD9A3; --gold-3: #CDAE6A;
+  --silver-1: #A6ABAD; --silver-2: #ECEEEF; --silver-3: #C3C8CA;
+  --bronze-1: #B98A5E; --bronze-2: #E8C49C; --bronze-3: #C99766;
+
+  /* Kalivae Recommended: deep spruce seal with an ice-diamond gem, fixed in both themes */
+  --kr-bg: #1F4D45;
+  --kr-ink: #FFFFFF;
+  --kr-ring: #B9CCD6;
+  --ice-1: #F7FBFC; --ice-2: #EEF4F7; --ice-3: #DCE8EE; --ice-4: #C9DAE2; --ice-5: #B9CCD6; --ice-6: #9FB7C3;
+
+  --serif: "Newsreader", "Source Serif 4", Georgia, serif;
+  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --wrap: 1240px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1513; --raised: #161E1B; --sunken: #131B18;
+    --ink: #ECE8E0; --muted: #B0B6B2; --subtle: #8D9590; --line: #2A3330; --line-strong: #66706B; --ok: #7CC29E; --warn: #D9B35A; --err: #E58C7C;
+    --brand: #86BFAE; --brand-hover: #A3D1C2; --on-brand: #0F1513;
+    --sage: #1C302A; --sage-deep: #223931; --brass: #C9A66B; --brass-ink: #D8B97F; --focus: #7FB8D6;
+    --deep: #183229; --on-deep: #ECE8E0; --on-deep-muted: #A9B8B1;
+    --veil: rgba(15, 21, 19, 0.92); --veil-0: rgba(15, 21, 19, 0); --grain-opacity: .07;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1513; --raised: #161E1B; --sunken: #131B18;
+  --ink: #ECE8E0; --muted: #B0B6B2; --subtle: #8D9590; --line: #2A3330; --line-strong: #66706B; --ok: #7CC29E; --warn: #D9B35A; --err: #E58C7C;
+  --brand: #86BFAE; --brand-hover: #A3D1C2; --on-brand: #0F1513;
+  --sage: #1C302A; --sage-deep: #223931; --brass: #C9A66B; --brass-ink: #D8B97F; --focus: #7FB8D6;
+  --deep: #183229; --on-deep: #ECE8E0; --on-deep-muted: #A9B8B1;
+  --veil: rgba(15, 21, 19, 0.92); --veil-0: rgba(15, 21, 19, 0); --grain-opacity: .07;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; position: relative; }
+/* Paper grain */
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--brand-hover); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 300; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 768px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.band { padding-block: 72px; }
+@media (min-width: 960px) { .band { padding-block: 104px; } }
+.band--sage { background: var(--sunken); }
+.wave { display: block; width: 100%; height: clamp(28px, 4vw, 64px); }
+.wave path { fill: var(--sunken); }
+.wave--deep path { fill: var(--deep); }
+
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/18px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
+.eyebrow::before { content: ""; width: 9px; height: 14px; background: var(--brand); border-radius: 0 100% 0 100%; transform: rotate(-20deg); flex: none; }
+.h-xl { font-size: clamp(46px, 7vw, 92px); line-height: 1; font-weight: 300; letter-spacing: -.03em; }
+.h-l { font-size: clamp(34px, 4.4vw, 56px); line-height: 1.06; font-weight: 300; letter-spacing: -.02em; }
+.h-m { font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; }
+.lede { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: var(--muted); max-width: 34em; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 48px; }
+.head > div { display: grid; gap: 16px; max-width: 40em; min-width: 0; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 500 15px/20px var(--sans); padding: 14px 26px; border-radius: 999px; border: 1px solid transparent; text-decoration: none; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; white-space: nowrap; }
+.btn--primary { background: var(--brand); color: var(--on-brand); }
+.btn--primary:hover { background: var(--brand-hover); color: var(--on-brand); }
+.btn--ghost { color: var(--ink); border-color: var(--brass); background: transparent; }
+.btn--ghost:hover { background: var(--sage); color: var(--ink); }
+.btn--sm { padding: 9px 18px; font-size: 14px; }
+.btn--light { background: var(--on-deep); color: var(--deep); }
+.btn--light:hover { background: var(--sage); color: var(--ink); }
+.link { font-weight: 500; font-size: 15px; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+/* Organic shapes */
+.arch { border-radius: 999px 999px 32px 32px; overflow: hidden; }
+.pebble-a { border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%; overflow: hidden; }
+.pebble-b { border-radius: 62% 38% 54% 46% / 44% 58% 42% 56%; overflow: hidden; }
+.soft { border-radius: 32px; overflow: hidden; }
+.leafy { border-radius: 32px 160px 32px 160px; overflow: hidden; }
+.r-45 { aspect-ratio: 4 / 5; } .r-43 { aspect-ratio: 4 / 3; } .r-11 { aspect-ratio: 1 / 1; } .r-32 { aspect-ratio: 3 / 2; }
+.media { max-width: 100%; background: var(--sage); }
+
+/* Placeholder images: replace a .ph with <img src="…" alt="…"> */
+.ph { position: relative; max-width: 100%; background: radial-gradient(120% 90% at 30% 25%, var(--sage) 0%, var(--sunken) 70%); display: grid; place-items: center; }
+.ph::after { content: attr(data-label); font: 500 11px/1.4 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--subtle); padding: 6px 12px; text-align: center; max-width: 80%; }
+
+/* ---------- Brush-stroke ratings ---------- */
+.grade { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; padding: 8px 20px 9px; font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--metal-ink); white-space: nowrap; }
+.grade::before { content: ""; position: absolute; inset: -3px -8px; z-index: -1; background: var(--metal);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-10%25' y='-30%25' width='120%25' height='160%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.55' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Cg filter='url(%23r)'%3E%3Cpath d='M12 36C16 21 48 14 94 15C142 13 190 10 224 20C234 25 233 40 221 46C184 55 128 51 76 53C44 55 18 51 12 43Z'/%3E%3Cpath d='M30 50C80 47 150 49 214 44L216 47C150 53 84 52 32 53Z' opacity='.7'/%3E%3Cpath d='M22 22C70 15 140 13 200 15L198 18C140 17 76 19 24 25Z' opacity='.6'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-10%25' y='-30%25' width='120%25' height='160%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.55' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Cg filter='url(%23r)'%3E%3Cpath d='M12 36C16 21 48 14 94 15C142 13 190 10 224 20C234 25 233 40 221 46C184 55 128 51 76 53C44 55 18 51 12 43Z'/%3E%3Cpath d='M30 50C80 47 150 49 214 44L216 47C150 53 84 52 32 53Z' opacity='.7'/%3E%3Cpath d='M22 22C70 15 140 13 200 15L198 18C140 17 76 19 24 25Z' opacity='.6'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+.grade--strong { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.22) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--gold-1) 0%, var(--gold-2) 36%, var(--gold-3) 60%, var(--gold-2) 82%, var(--gold-1) 100%); }
+.grade--moderate { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.3) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--silver-1) 0%, var(--silver-2) 36%, var(--silver-3) 60%, var(--silver-2) 82%, var(--silver-1) 100%); }
+.grade--limited { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.2) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--bronze-1) 0%, var(--bronze-2) 36%, var(--bronze-3) 60%, var(--bronze-2) 82%, var(--bronze-1) 100%); }
+.grade--lg { padding: 14px 34px 15px; font-size: 13px; letter-spacing: .22em; }
+
+/* ---------- Kalivae Recommended ---------- */
+/* The badge is a cut gem: an elongated hexagon with faceted edges and a flat table carrying the words */
+.kr { position: absolute; left: 50%; bottom: -23px; transform: translateX(-50%); z-index: 3; width: 224px; height: 46px; display: grid; place-items: center; isolation: isolate; }
+.kr-glass, .kr::before, .kr::after { position: absolute; inset: 0; clip-path: polygon(0 50%, 8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%); }
+/* Frosted glass: blurs whatever sits behind the gem */
+.kr-glass { z-index: 0; background: rgba(255, 255, 255, .16); -webkit-backdrop-filter: blur(5px) saturate(1.35); backdrop-filter: blur(5px) saturate(1.35); }
+.kr svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; filter: drop-shadow(0 4px 8px rgba(15, 30, 26, .16)); }
+/* Opal fire: soft pastel colours drifting through the stone */
+.kr::before { content: ""; z-index: 2; opacity: .72; mix-blend-mode: multiply;
+  background: linear-gradient(115deg, #FBE1EC 0%, #E2DBFA 16%, #D3F0F2 32%, #DDF5E1 48%, #FCEBD3 64%, #F6DDF0 80%, #D8E6FB 100%);
+  background-size: 260% 100%; animation: opal 9s ease-in-out infinite alternate; }
+@keyframes opal { from { background-position: 0% 0; } to { background-position: 100% 0; } }
+.kr b { position: relative; z-index: 3; font: 600 10px/1 var(--sans); letter-spacing: .17em; text-transform: uppercase; color: var(--metal-ink); white-space: nowrap; text-shadow: 0 0 6px rgba(255, 255, 255, .8); }
+.kr::after { content: ""; z-index: 4; background: linear-gradient(105deg, rgba(255,255,255,0) 38%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0) 62%) no-repeat; background-size: 200% 100%; background-position: 160% 0; animation: glint 6s ease-in-out infinite; }
+@keyframes glint { 0%, 60% { background-position: 160% 0; } 90%, 100% { background-position: -60% 0; } }
+.gem .f1 { fill: var(--ice-1); fill-opacity: .55; } .gem .f2 { fill: var(--ice-2); fill-opacity: .5; } .gem .f3 { fill: var(--ice-3); fill-opacity: .55; }
+.gem .f4 { fill: var(--ice-4); fill-opacity: .6; } .gem .f5 { fill: var(--ice-5); fill-opacity: .65; } .gem .f6 { fill: var(--ice-6); fill-opacity: .7; }
+.gem .tbl { fill: var(--ice-1); fill-opacity: .62; }
+.gem .shine { fill: #FFFFFF; opacity: .4; }
+.gem .edge { fill: none; stroke: #7F9AA8; stroke-width: .8; stroke-linejoin: round; }
+.gem .cut { fill: none; stroke: rgba(127, 154, 168, .55); stroke-width: .6; }
+
+/* Highlighted card: a thick shimmering ice ring with sparkles drifting off it */
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.prod-media { position: relative; }
+.prod--kr .prod-media::before { content: ""; position: absolute; inset: -9px; border-radius: 999px 999px 41px 41px; z-index: 0;
+  background: conic-gradient(from var(--ang), var(--ice-6), var(--ice-1), var(--ice-4), #FFFFFF, #8AA3B0, var(--ice-2), var(--ice-5), #FFFFFF, var(--ice-6));
+  box-shadow: 0 0 22px rgba(159, 183, 195, .45); animation: ring-turn 10s linear infinite; }
+@keyframes ring-turn { to { --ang: 360deg; } }
+.prod--kr .prod-media > .ph, .prod--kr .prod-media > .media { position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--bg); }
+.prod--kr .prod-top { margin-top: 24px; }
+.prod--kr .pick-note { font: italic 400 15px/1.4 var(--serif); color: var(--brand); }
+.spark { position: absolute; z-index: 2; width: var(--s, 10px); height: var(--s, 10px); margin: calc(var(--s, 10px) / -2) 0 0 calc(var(--s, 10px) / -2); pointer-events: none; opacity: 0;
+  background: radial-gradient(circle, #FFFFFF 0 28%, var(--ice-5) 72%);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  animation: twinkle 4.8s ease-out infinite; animation-delay: var(--d, 0s); }
+@keyframes twinkle {
+  0% { opacity: 0; transform: translate(0, 0) scale(.2) rotate(0deg); }
+  18% { opacity: .95; transform: translate(calc(var(--dx) * .3), calc(var(--dy) * .3)) scale(1) rotate(25deg); }
+  55%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(.35) rotate(60deg); }
+}
+.shop-band { overflow-x: clip; }
+
+/* Check-price menu for picks with several retailers */
+.price-menu { position: relative; }
+.price-menu > summary { list-style: none; }
+.price-menu > summary::-webkit-details-marker { display: none; }
+.price-menu > summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-135deg) translate(-1px, -1px); margin-left: 2px; }
+.price-menu[open] > summary { background: var(--sage); }
+.menu { position: absolute; right: 0; bottom: calc(100% + 10px); z-index: 6; min-width: 240px; display: grid; gap: 2px; padding: 8px; background: var(--raised); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 12px 32px rgba(15, 30, 26, .14); }
+.menu a { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px 14px; border-radius: 14px; text-decoration: none; color: var(--ink); font-size: 14px; }
+.menu a:hover { background: var(--sage); color: var(--ink); }
+.menu a span:last-child { font: italic 400 16px/1 var(--serif); color: var(--muted); }
+.menu-head { font: 500 11px/16px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 6px 14px 4px; }
+.soon { font-size: 13px; color: var(--subtle); }
+.prod-img { width: 100%; height: 100%; object-fit: cover; }
+.head-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+
+/* Promo + header */
+.promo { background: var(--brand); color: var(--on-brand); font-size: 13px; text-align: center; }
+.promo .wrap { padding-block: 9px; }
+.promo a { color: var(--on-brand); font-weight: 600; }
+.header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.logo:hover { color: var(--ink); }
+.logo svg { width: 30px; height: 30px; flex: none; }
+.logo span { font: 400 28px/1 var(--serif); letter-spacing: -.01em; }
+.mark-a { fill: var(--brand); }
+.mark-b { fill: none; stroke: var(--bg); stroke-width: 1.3; stroke-linecap: round; }
+.mark-stem { fill: none; stroke: var(--brand); stroke-width: 1.8; stroke-linecap: round; }
+.footer .mark-b { stroke: var(--sunken); }
+.nav { display: none; gap: 30px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.nav a:hover { color: var(--ink); }
+@media (min-width: 980px) { .nav { display: flex; } }
+
+/* Hero */
+.hero { padding-block: 8px 0; }
+.hero-frame { position: relative; border-radius: 40px 40px 40px 240px; overflow: hidden; background: var(--sage); }
+.hero-frame .media { aspect-ratio: 3 / 2; background: none; }
+.hero-frame img { object-position: 70% 40%; }
+.hero-copy { display: grid; gap: 24px; padding: 32px 4px 0; min-width: 0; }
+.hero-copy .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (min-width: 900px) {
+  .hero-frame .media { aspect-ratio: auto; height: clamp(560px, 62vw, 720px); }
+  .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--veil) 0%, var(--veil) 30%, var(--veil-0) 62%); }
+  .hero-copy { position: absolute; z-index: 1; inset: 0 auto 0 0; width: min(560px, 52%); align-content: center; padding: 48px 0 48px 64px; }
+}
+.values { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px 40px; padding-block: 40px 8px; }
+.value { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.value b { font: italic 300 clamp(30px, 3vw, 40px)/1 var(--serif); color: var(--brand); }
+.value span { font-size: 15px; color: var(--muted); max-width: 14em; }
+
+/* Topic ribbon */
+.ribbon { padding-block: 40px 56px; overflow: hidden; }
+.ribbon-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
+.flow { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.track { display: flex; align-items: center; width: max-content; animation: slide 70s linear infinite; }
+.flow.is-paused .track { animation-play-state: paused; }
+.tw { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font: italic 300 clamp(26px, 3.2vw, 42px)/1.2 var(--serif); color: var(--ink); white-space: nowrap; }
+.tw::after { content: ""; width: 10px; height: 16px; background: var(--brand); border-radius: 0 100% 0 100%; transform: rotate(-24deg); }
+@keyframes slide { to { transform: translateX(-50%); } }
+.round-btn { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; flex: none; }
+.round-btn svg { width: 16px; height: 16px; }
+
+/* Method */
+.method { display: grid; gap: 56px; }
+.steps { display: grid; gap: 36px; }
+.step { display: grid; gap: 10px; }
+.step .n { font: italic 300 22px/1 var(--serif); color: var(--brass-ink); }
+.step p { color: var(--muted); }
+@media (min-width: 860px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 48px; } }
+.medals { display: grid; gap: 20px; }
+.medal { background: var(--bg); border-radius: 36px; padding: 32px 28px; display: grid; gap: 16px; justify-items: start; }
+.medal:nth-child(1) { border-radius: 36px 36px 36px 120px; }
+.medal:nth-child(2) { border-radius: 36px; }
+.medal:nth-child(3) { border-radius: 36px 120px 36px 36px; }
+.medal h3 { font-size: 22px; }
+.medal h3 span { font-style: italic; font-weight: 300; color: var(--muted); }
+.medal p { color: var(--muted); font-size: 15px; }
+@media (min-width: 860px) { .medals { grid-template-columns: repeat(3, 1fr); } }
+
+/* Editorial */
+.edit { display: grid; gap: 40px; }
+.story { display: grid; gap: 14px; text-decoration: none; color: inherit; align-content: start; min-width: 0; }
+.story:hover { color: inherit; }
+.story:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.story .meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.story .cat { font: 500 12px/16px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--brand); }
+.story h3 { font-size: 22px; line-height: 1.25; }
+.story p { color: var(--muted); font-size: 15px; }
+.story--lead h3 { font-size: clamp(30px, 3.2vw, 42px); line-height: 1.1; font-weight: 300; }
+.story--lead .media { max-width: 520px; }
+.edit-side { display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); align-content: start; }
+@media (min-width: 960px) { .edit { grid-template-columns: 1fr 1.05fr; gap: 64px; } }
+
+/* Topics */
+.topics { display: grid; gap: 18px; }
+@media (min-width: 640px) { .topics { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .topics { grid-template-columns: repeat(3, 1fr); } }
+.topic { background: var(--sage); padding: 32px; display: grid; gap: 14px; align-content: start; text-decoration: none; color: inherit; transition: background-color .25s; }
+.topic:hover { background: var(--sage-deep); color: inherit; }
+.topic:nth-child(6n+1) { border-radius: 40px 40px 40px 110px; }
+.topic:nth-child(6n+2) { border-radius: 110px 40px 40px 40px; }
+.topic:nth-child(6n+3) { border-radius: 40px 110px 40px 40px; }
+.topic:nth-child(6n+4) { border-radius: 40px 40px 110px 40px; }
+.topic:nth-child(6n+5) { border-radius: 40px; }
+.topic:nth-child(6n+6) { border-radius: 40px 40px 40px 110px; }
+.topic h3 { font-size: 28px; line-height: 1.15; }
+.topic h3 em { color: var(--brand); }
+.topic ul { display: grid; gap: 6px; font-size: 15px; color: var(--muted); }
+.topic .go { font-weight: 500; font-size: 14px; color: var(--brand); }
+
+/* Rows */
+.rows { display: grid; gap: 80px; }
+.row { display: grid; gap: 32px; align-items: center; }
+.row-copy { display: grid; gap: 16px; min-width: 0; max-width: 30em; }
+.row-copy p { color: var(--muted); font-size: 17px; }
+.row-copy h3 { font-size: clamp(30px, 3vw, 42px); font-weight: 300; }
+.specimen { display: grid; gap: 14px; padding-top: 8px; }
+.specimen-line { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 15px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+.dose { font: italic 400 20px/1 var(--serif); color: var(--ink); }
+@media (min-width: 900px) {
+  .row { grid-template-columns: 1fr 1fr; gap: 88px; }
+  .row:nth-child(even) .row-media { order: 2; }
+}
+
+/* Compare */
+.compare { display: grid; gap: 20px; }
+@media (min-width: 860px) { .compare { grid-template-columns: 1.15fr 1fr; } }
+.compare-col { padding: 36px 32px; display: grid; gap: 20px; align-content: start; }
+.compare-col--us { background: var(--sage); border-radius: 40px 40px 40px 140px; }
+.compare-col--them { background: var(--bg); border-radius: 40px 140px 40px 40px; }
+.compare-col h3 { font-size: 26px; }
+.compare-col ul { display: grid; gap: 14px; }
+.compare-col li { display: flex; gap: 12px; align-items: start; font-size: 16px; }
+.compare-col li svg { width: 20px; height: 20px; flex: none; margin-top: 3px; }
+.compare-col--us li svg { color: var(--brand); }
+.compare-col--them li { color: var(--muted); }
+.compare-col--them li svg { color: var(--subtle); }
+
+/* Shop */
+.shop { display: grid; gap: 40px 24px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.prod { display: grid; gap: 14px; align-content: start; }
+.prod-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.prod .cat { font: 500 12px/16px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.prod h3 { font-size: 21px; line-height: 1.25; }
+.prod p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+.prod-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 4px; }
+.price { font: italic 400 18px/1 var(--serif); }
+.disclose { font-size: 13px; color: var(--muted); margin-top: 36px; }
+
+/* Lead */
+.lead-band { background: var(--deep); color: var(--on-deep); }
+.lead { display: grid; gap: 40px; align-items: center; padding-block: 56px 72px; }
+.lead-copy { display: grid; gap: 20px; min-width: 0; }
+.lead-copy .eyebrow { color: var(--on-deep-muted); }
+.lead-copy .eyebrow::before { background: var(--on-deep-muted); }
+.lead-copy h2 { color: var(--on-deep); }
+.lead-copy p { color: var(--on-deep-muted); max-width: 32em; }
+.lead-list { display: grid; gap: 10px; }
+.lead-list li { display: flex; gap: 12px; color: var(--on-deep); font-size: 15px; }
+.lead-list li::before { content: ""; width: 8px; height: 13px; background: var(--on-deep-muted); border-radius: 0 100% 0 100%; transform: rotate(-20deg); flex: none; margin-top: 6px; }
+.signup { display: grid; gap: 10px; margin-top: 8px; }
+.signup label { font-weight: 600; font-size: 14px; }
+.field { display: flex; flex-wrap: wrap; gap: 8px; }
+.field input { flex: 1 1 220px; min-width: 0; font: 400 16px/22px var(--sans); padding: 13px 20px; border-radius: 999px; border: 1px solid var(--on-deep-muted); background: transparent; color: var(--on-deep); }
+.field input::placeholder { color: var(--on-deep-muted); }
+.field input:focus { outline: 2px solid var(--brass); outline-offset: 1px; }
+.consent { font-size: 12.5px; color: var(--on-deep-muted); }
+.status { font-size: 14px; font-weight: 600; min-height: 20px; color: var(--on-deep); }
+.lead-media { max-width: 460px; justify-self: center; width: 100%; }
+@media (min-width: 900px) { .lead { grid-template-columns: 1.15fr 1fr; gap: 80px; padding-block: 64px 96px; } }
+
+/* FAQ */
+.faq-grid { display: grid; gap: 40px; }
+@media (min-width: 900px) { .faq-grid { grid-template-columns: 1fr 1.6fr; gap: 80px; } }
+.faq details { padding-block: 20px; border-bottom: 1px dashed var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 24px; font: 400 21px/1.35 var(--serif); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 300 26px/1 var(--sans); color: var(--brass-ink); transition: transform .25s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); margin-top: 12px; max-width: 40em; }
+
+/* Closing */
+.closing { display: grid; gap: 28px; justify-items: center; text-align: center; }
+.closing .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.closing-media { width: min(100%, 360px); }
+
+/* Footer */
+.footer { background: var(--sunken); padding-block: 24px 40px; font-size: 14px; color: var(--muted); }
+.foot-grid { display: grid; gap: 40px; margin-bottom: 48px; }
+.foot-grid h4 { font: 500 12px/16px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 0 0 14px; }
+.foot-grid ul { display: grid; gap: 8px; }
+.foot-grid a { color: var(--muted); text-decoration: none; }
+.foot-grid a:hover { color: var(--ink); text-decoration: underline; }
+.foot-brand p { margin-top: 16px; max-width: 28em; }
+@media (min-width: 820px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.legal { display: grid; gap: 12px; line-height: 1.6; padding-top: 24px; border-top: 1px dashed var(--line); }
+.signoff { font: italic 300 24px/1.3 var(--serif); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) { .track, .kr::after, .kr::before, .prod--kr .prod-media::before { animation: none; } .spark { display: none; } * { transition: none !important; } }
+/* ---------- Quiz lead magnet ---------- */
+.quiz-wrap { display: grid; gap: 32px; padding-block: 56px 72px; }
+.quiz-intro { display: grid; gap: 14px; max-width: 44em; }
+.quiz-intro .eyebrow { color: var(--on-deep-muted); }
+.quiz-intro .eyebrow::before { background: var(--on-deep-muted); }
+.quiz-intro h2 { color: var(--on-deep); }
+.quiz-intro p { color: var(--on-deep-muted); max-width: 36em; }
+@media (min-width: 900px) { .quiz-wrap { padding-block: 72px 96px; } }
+
+.quiz-card { background: var(--bg); color: var(--ink); border-radius: 32px; padding: 32px 24px; box-shadow: 0 24px 60px rgba(0,0,0,.22); }
+@media (min-width: 720px) { .quiz-card { padding: 48px 56px; border-radius: 48px; } }
+
+.quiz-steps { display: flex; gap: 8px; margin-bottom: 24px; }
+.quiz-steps i { flex: 1; height: 4px; border-radius: 999px; background: var(--line); transition: background .25s; }
+.quiz-steps i.done { background: var(--brand); }
+.quiz-steps i.now { background: var(--brass); }
+
+.q-head { display: grid; gap: 10px; margin-bottom: 24px; }
+.q-head .q-meta { font: 500 12px/16px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--brass-ink); }
+.q-head h3 { font: 300 clamp(24px, 2.6vw, 34px)/1.15 var(--serif); letter-spacing: -.015em; }
+.q-head .q-hint { font-size: 14.5px; color: var(--muted); max-width: 36em; }
+
+.q-options { display: grid; gap: 10px; }
+.q-option { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border: 1px solid var(--line); background: var(--raised); border-radius: 20px; cursor: pointer; transition: border-color .15s, background .15s; }
+.q-option:hover { border-color: var(--brand); }
+.q-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.q-option .box { width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid var(--line-strong); display: grid; place-items: center; flex: none; background: var(--bg); transition: border-color .15s, background .15s; }
+.q-option .box.radio { border-radius: 50%; }
+.q-option .box svg { opacity: 0; width: 14px; height: 14px; color: var(--on-brand); transition: opacity .15s; }
+.q-option input:checked ~ .box { background: var(--brand); border-color: var(--brand); }
+.q-option input:checked ~ .box svg { opacity: 1; }
+.q-option input:checked ~ .box.radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--on-brand); }
+.q-option input:focus-visible ~ .box { outline: 2px solid var(--focus); outline-offset: 3px; }
+.q-option .lbl { font-size: 16px; line-height: 1.4; min-width: 0; }
+.q-option input:checked ~ .lbl { color: var(--ink); }
+.q-option.is-selected { border-color: var(--brand); background: var(--sage); }
+.q-option.is-disabled { opacity: .45; cursor: not-allowed; }
+
+.q-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 32px; padding-top: 20px; border-top: 1px dashed var(--line); }
+.q-nav .count { font-size: 13px; color: var(--muted); }
+.q-err { font-size: 14px; color: var(--err); min-height: 20px; margin-top: 10px; }
+
+.q-email { display: grid; gap: 10px; margin-top: 10px; }
+.q-email input { font: 400 16px/22px var(--sans); color: var(--ink); background: var(--raised); border: 1px solid var(--line-strong); border-radius: 14px; padding: 13px 18px; }
+.q-email input:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+.q-email input.is-invalid { border-color: var(--err); }
+.q-email .q-check { display: flex; gap: 10px; align-items: start; font-size: 13.5px; color: var(--muted); }
+.q-email .q-check input { width: 18px; height: 18px; margin-top: 2px; flex: none; accent-color: var(--brand); }
+
+/* Results */
+.q-result { display: grid; gap: 28px; }
+.q-result .r-head { display: grid; gap: 10px; }
+.q-result .r-head h3 { font: 300 clamp(26px, 3vw, 38px)/1.15 var(--serif); }
+.q-result .r-head p { color: var(--muted); max-width: 42em; }
+.q-habits { display: grid; gap: 14px; }
+.q-habit { display: flex; gap: 14px; padding: 16px 18px; border-radius: 20px; background: var(--sage); }
+.q-habit .n { font: italic 300 20px/1 var(--serif); color: var(--brand); flex: none; margin-top: 2px; }
+.q-habit h4 { font: 500 17px/1.3 var(--sans); margin: 0 0 4px; }
+.q-habit p { font-size: 14.5px; color: var(--muted); margin: 0; }
+.q-prods { display: grid; gap: 16px; }
+@media (min-width: 720px) { .q-prods { grid-template-columns: repeat(2, 1fr); } }
+.q-prod { background: var(--raised); border: 1px solid var(--line); border-radius: 24px; padding: 20px 22px; display: grid; gap: 10px; align-content: start; }
+.q-prod-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap; }
+.q-prod .cat { font: 500 11px/16px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.q-prod h4 { font: 400 20px/1.25 var(--serif); margin: 0; }
+.q-prod .why { font-size: 13.5px; color: var(--brass-ink); font-style: italic; }
+.q-prod .bene { font-size: 14.5px; color: var(--ink); }
+.q-prod .suit { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+.q-prod .research { font-size: 13px; }
+
+.q-disclaimer { font-size: 13px; color: var(--muted); padding-top: 20px; border-top: 1px dashed var(--line); }
+
+@media (prefers-reduced-motion: reduce) { .quiz-card, .q-option, .quiz-steps i { transition: none !important; } }
+
+/* ---------- Admin view (#admin) ---------- */
+[hidden], #admin-view [hidden] { display: none !important; }
+#admin-view .wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#admin-view .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px dashed var(--line); }
+#admin-view .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+#admin-view .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+#admin-view .logo svg { width: 26px; height: 26px; }
+#admin-view .logo span { font: 400 24px/1 var(--serif); }
+#admin-view .logo small { font: 500 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-left: 6px; }
+#admin-view .mark-a { fill: var(--brand); }
+#admin-view .mark-b { fill: none; stroke: var(--bg); stroke-width: 1.3; stroke-linecap: round; }
+#admin-view .mark-stem { fill: none; stroke: var(--brand); stroke-width: 1.8; stroke-linecap: round; }
+#admin-view .top-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+#admin-view .intro { padding-block: 40px 24px; display: grid; gap: 10px; }
+#admin-view .intro h1 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 300; }
+#admin-view .intro h1 em { font-style: italic; }
+#admin-view .intro p { color: var(--muted); max-width: 46em; }
+#admin-view .notice { border-radius: 18px; padding: 14px 18px; background: var(--sage); color: var(--ink); font-size: 14px; }
+#admin-view .notice--warn { background: var(--sunken); border: 1px dashed var(--line-strong); }
+#admin-view .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 500 14px/18px var(--sans); padding: 10px 18px; border-radius: 999px; border: 1px solid transparent; cursor: pointer; text-decoration: none; white-space: nowrap; background: none; color: var(--ink); }
+#admin-view .btn--primary { background: var(--brand); color: var(--on-brand); }
+#admin-view .btn--primary:hover { background: var(--brand-hover); }
+#admin-view .btn--ghost { border-color: var(--line-strong); }
+#admin-view .btn--ghost:hover { border-color: var(--brand); color: var(--brand); }
+#admin-view .btn--quiet { padding: 8px 12px; color: var(--muted); }
+#admin-view .btn--quiet:hover { color: var(--ink); background: var(--sunken); }
+#admin-view .btn--danger { color: var(--err); border-color: var(--err); }
+#admin-view .btn:disabled { opacity: .45; cursor: not-allowed; }
+#admin-view .icon { width: 16px; height: 16px; }
+#admin-view .list { display: grid; gap: 24px; padding-bottom: 96px; }
+#admin-view .empty { text-align: center; padding: 56px 24px; border: 1px dashed var(--line-strong); border-radius: 32px; display: grid; gap: 12px; justify-items: center; color: var(--muted); }
+#admin-view .empty h2 { font-size: 26px; color: var(--ink); }
+#admin-view .pick { background: var(--raised); border: 1px solid var(--line); border-radius: 32px; padding: 24px; display: grid; gap: 22px; }
+#admin-view .pick.is-dirty { border-color: var(--brand); }
+#admin-view .pick.is-kr { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--ice-4); }
+#admin-view .pick-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+#admin-view .pick-head h2 { font-size: 22px; min-width: 0; overflow-wrap: anywhere; }
+#admin-view .pick-head .num { font: italic 300 18px/1 var(--serif); color: var(--brass-ink); margin-right: 8px; }
+#admin-view .pick-tools { display: flex; gap: 4px; align-items: center; }
+#admin-view .grid { display: grid; gap: 20px; }
+@media (min-width: 760px) {
+#admin-view .grid { grid-template-columns: 200px 1fr; gap: 28px; }
+}
+#admin-view .photo { display: grid; gap: 10px; align-content: start; }
+#admin-view .photo-frame { aspect-ratio: 4 / 5; max-width: 200px; border-radius: 999px 999px 24px 24px; overflow: hidden; background: radial-gradient(120% 90% at 30% 25%, var(--sage) 0%, var(--sunken) 70%); display: grid; place-items: center; color: var(--subtle); font-size: 12px; text-align: center; padding: 12px; }
+#admin-view .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+#admin-view .photo-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+#admin-view .file-label { position: relative; overflow: hidden; }
+#admin-view .file-label input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+#admin-view .fields { display: grid; gap: 16px; min-width: 0; }
+#admin-view .row2 { display: grid; gap: 16px; }
+@media (min-width: 560px) {
+#admin-view .row2 { grid-template-columns: 1fr 1fr; }
+}
+#admin-view .field { display: grid; gap: 6px; min-width: 0; }
+#admin-view .field > label, #admin-view .legend { font-weight: 600; font-size: 13px; }
+#admin-view .hint { font-size: 12.5px; color: var(--subtle); }
+#admin-view input[type="text"], #admin-view input[type="url"], #admin-view textarea { width: 100%; min-width: 0; font: 400 15px/1.45 var(--sans); color: var(--ink); background: var(--bg); border: 1px solid var(--line-strong); border-radius: 14px; padding: 10px 14px; }
+#admin-view textarea { resize: vertical; min-height: 84px; }
+#admin-view input:focus, #admin-view textarea:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+#admin-view input.is-invalid { border-color: var(--err); }
+#admin-view .counter { font-size: 12px; color: var(--subtle); justify-self: end; }
+#admin-view fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+#admin-view .ratings { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+#admin-view .rate { position: relative; cursor: pointer; }
+#admin-view .rate input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+#admin-view .rate .grade { opacity: .38; transition: opacity .15s, transform .15s; }
+#admin-view .rate input:checked + .grade { opacity: 1; transform: scale(1.06); }
+#admin-view .rate input:focus-visible + .grade { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 4px; }
+#admin-view .rate:hover .grade { opacity: .75; }
+#admin-view .grade { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; padding: 9px 22px 10px; font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--metal-ink); white-space: nowrap; }
+#admin-view .grade::before { content: ""; position: absolute; inset: -3px -8px; z-index: -1; background: var(--metal);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-10%25' y='-30%25' width='120%25' height='160%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.55' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Cg filter='url(%23r)'%3E%3Cpath d='M12 36C16 21 48 14 94 15C142 13 190 10 224 20C234 25 233 40 221 46C184 55 128 51 76 53C44 55 18 51 12 43Z'/%3E%3Cpath d='M30 50C80 47 150 49 214 44L216 47C150 53 84 52 32 53Z' opacity='.7'/%3E%3Cpath d='M22 22C70 15 140 13 200 15L198 18C140 17 76 19 24 25Z' opacity='.6'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-10%25' y='-30%25' width='120%25' height='160%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.55' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Cg filter='url(%23r)'%3E%3Cpath d='M12 36C16 21 48 14 94 15C142 13 190 10 224 20C234 25 233 40 221 46C184 55 128 51 76 53C44 55 18 51 12 43Z'/%3E%3Cpath d='M30 50C80 47 150 49 214 44L216 47C150 53 84 52 32 53Z' opacity='.7'/%3E%3Cpath d='M22 22C70 15 140 13 200 15L198 18C140 17 76 19 24 25Z' opacity='.6'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+#admin-view .grade--strong { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.22) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--gold-1) 0%, var(--gold-2) 36%, var(--gold-3) 60%, var(--gold-2) 82%, var(--gold-1) 100%); }
+#admin-view .grade--moderate { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.3) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--silver-1) 0%, var(--silver-2) 36%, var(--silver-3) 60%, var(--silver-2) 82%, var(--silver-1) 100%); }
+#admin-view .grade--limited { --metal: repeating-linear-gradient(178deg, rgba(255,255,255,.2) 0 1px, rgba(0,0,0,0) 1px 3px), linear-gradient(100deg, var(--bronze-1) 0%, var(--bronze-2) 36%, var(--bronze-3) 60%, var(--bronze-2) 82%, var(--bronze-1) 100%); }
+#admin-view .kr-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px; border-radius: 20px; background: var(--sunken); flex-wrap: wrap; }
+#admin-view .kr-label { display: flex; gap: 12px; align-items: center; min-width: 0; }
+#admin-view .kr-label svg { width: 34px; height: 22px; flex: none; }
+#admin-view .kr-label strong { display: block; font-weight: 600; font-size: 14px; }
+#admin-view .kr-label span { font-size: 12.5px; color: var(--muted); }
+#admin-view .switch { position: relative; width: 50px; height: 28px; flex: none; }
+#admin-view .switch input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; z-index: 1; }
+#admin-view .switch .track { position: absolute; inset: 0; border-radius: 999px; background: var(--line-strong); transition: background .2s; }
+#admin-view .switch .track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--raised); box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s; }
+#admin-view .switch input:checked + .track { background: var(--brand); }
+#admin-view .switch input:checked + .track::after { transform: translateX(22px); }
+#admin-view .switch input:focus-visible + .track { outline: 2px solid var(--focus); outline-offset: 2px; }
+#admin-view .switch input:disabled { cursor: not-allowed; }
+#admin-view .kr-warn { font-size: 12.5px; color: var(--warn); flex-basis: 100%; }
+#admin-view .links { display: grid; gap: 10px; }
+#admin-view .links-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+#admin-view .link-row { display: grid; gap: 8px; grid-template-columns: 1fr auto; align-items: start; padding: 12px; border-radius: 18px; border: 1px dashed var(--line); }
+#admin-view .link-row .inputs { display: grid; gap: 8px; min-width: 0; }
+@media (min-width: 680px) {
+#admin-view .link-row .inputs { grid-template-columns: 1fr 2fr 0.9fr; }
+}
+#admin-view .link-row label { font-size: 12px; color: var(--muted); display: grid; gap: 4px; min-width: 0; }
+#admin-view .link-err { font-size: 12px; color: var(--err); grid-column: 1 / -1; }
+#admin-view .pick-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 6px; border-top: 1px dashed var(--line); }
+#admin-view .status { font-size: 13px; color: var(--muted); min-height: 18px; }
+#admin-view .status.ok { color: var(--ok); }
+#admin-view .status.err { color: var(--err); }
+#admin-view .status.warn { color: var(--warn); }
+#admin-view .confirm { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+@media (prefers-reduced-motion: reduce) {
+#admin-view * { transition: none !important; }
+}
+</style>
+
+<div id="site-view">
+<div class="promo"><div class="wrap">New: your personalized Longevity Protocol. <a href="#protocol">Take the free quiz</a></div></div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Kalivae home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path class="mark-stem" d="M7 25L2.5 29.5"/><path class="mark-a" d="M6 26C5 14 13 4.5 29 3C29.5 18 20 27.5 6 26Z"/><path class="mark-b" d="M7.5 24.5L24 8M12 19.5L11 13.5M12 19.5L18 20.5M16.5 15L16 9.5M16.5 15L22 15.5M20.5 11L20.5 7.5M20.5 11L24.5 11"/></svg>
+      <span>Kalivae</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#reviews">Longevity</a>
+      <a href="#topics">Skin</a>
+      <a href="#topics">Supplements</a>
+      <a href="#topics">Sleep</a>
+      <a href="#method">How we grade</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="#protocol">Take the quiz</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-frame">
+        <div class="media"><img src="img/hero-meditation.jpg" alt="A woman meditating on a mountain ridge at sunrise, wrapped in a sweep of gold brushstrokes"></div>
+        <div class="hero-copy">
+          <span class="eyebrow">Longevity, skin &amp; supplements</span>
+          <h1 class="h-xl">Age well.<br><em>Know why.</em></h1>
+          <p class="lede">We read the research behind every supplement, skincare ingredient and longevity habit, then give it a clear rating, in plain English, with every claim cited.</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#protocol">Take the 2-minute quiz</a>
+            <a class="btn btn--ghost" href="#method">How our ratings work</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="values">
+        <div class="value"><b>Gold, silver, bronze</b><span>a clear rating on every claim</span></div>
+        <div class="value"><b>Every</b><span>claim linked to its source</span></div>
+        <div class="value"><b>Free</b><span>to read, with no paywall</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPIC RIBBON -->
+  <section class="ribbon" aria-label="Topics we cover">
+    <div class="wrap ribbon-head">
+      <span class="eyebrow">What we're reading about</span>
+      <button class="round-btn" type="button" id="flow-toggle" aria-label="Pause scrolling topics" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="3.5" height="12" rx="1.5"/><rect x="13.5" y="6" width="3.5" height="12" rx="1.5"/></svg></button>
+    </div>
+    <div class="flow" id="flow">
+      <div class="track">
+        <span class="tw">NAD+ &amp; NMN</span><span class="tw">Creatine</span><span class="tw">Retinoids</span><span class="tw">Red light therapy</span><span class="tw">Collagen</span><span class="tw">Magnesium for sleep</span><span class="tw">Zone 2 training</span><span class="tw">Omega-3</span><span class="tw">Cold plunges</span><span class="tw">Vitamin D</span>
+        <span class="tw">NAD+ &amp; NMN</span><span class="tw">Creatine</span><span class="tw">Retinoids</span><span class="tw">Red light therapy</span><span class="tw">Collagen</span><span class="tw">Magnesium for sleep</span><span class="tw">Zone 2 training</span><span class="tw">Omega-3</span><span class="tw">Cold plunges</span><span class="tw">Vitamin D</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 8 360 8 560 30C760 52 980 60 1180 34C1300 18 1380 16 1440 22V64H0Z"/></svg>
+  <section class="band band--sage" id="method">
+    <div class="wrap method">
+      <div class="head" style="margin-bottom:0">
+        <div>
+          <span class="eyebrow">How our ratings work</span>
+          <h2 class="h-l">Research in. <em>A verdict out.</em></h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">One</span><h3 class="h-m">We go to the source</h3><p>Human trials and reviews of many studies come first. Animal and lab studies are always labelled, so you know what's actually been shown in people.</p></div>
+        <div class="step"><span class="n">Two</span><h3 class="h-m">We weigh the evidence</h3><p>How many studies, how big, how long, and whether they agree. That decides the rating.</p></div>
+        <div class="step"><span class="n">Three</span><h3 class="h-m">We give you a verdict</h3><p>Who it's for, who should skip it, and the dose that was actually studied. Sometimes the answer is that you don't need it.</p></div>
+      </div>
+      <div class="medals">
+        <div class="medal"><span class="grade grade--strong grade--lg">Strong</span><h3>Gold <span>· strong evidence</span></h3><p>Several well-designed human trials, with results that agree.</p></div>
+        <div class="medal"><span class="grade grade--moderate grade--lg">Moderate</span><h3>Silver <span>· moderate evidence</span></h3><p>Some human data, but small, short or mixed. Promising, not settled.</p></div>
+        <div class="medal"><span class="grade grade--limited grade--lg">Limited</span><h3>Bronze <span>· limited evidence</span></h3><p>Mostly animal, lab or anecdotal. Interesting, but not yet shown in people.</p></div>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1)"><path d="M0 28C220 56 420 58 640 36C860 14 1060 8 1240 26C1330 35 1400 40 1440 38V64H0Z"/></svg>
+
+  <!-- EDITORIAL -->
+  <section class="band" id="reviews">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">This week's reviews</span>
+          <h2 class="h-l">The latest, <em>rated</em></h2>
+        </div>
+        <a class="link" href="#reviews">All reviews →</a>
+      </div>
+      <div class="edit">
+        <a class="story story--lead" href="#reviews">
+          <div class="media arch r-45"><img src="img/longevity-runner.jpg" alt="A man running a coastal trail at golden hour"></div>
+          <div class="meta"><span class="cat">Longevity</span><span class="grade grade--strong">Strong</span></div>
+          <h3>Muscle is the <em>longevity organ:</em> why strength matters after 40</h3>
+          <p>Of everything we review, regular exercise has some of the strongest human evidence for living longer and better. Here's how much, and what kind.</p>
+          <span class="small muted">12 min read</span>
+        </a>
+        <div class="edit-side">
+          <a class="story" href="#reviews">
+            <div class="media soft r-43"><img src="img/sleep.jpg" alt="A man asleep in soft white bedding, framed by gold leaf and a night sky"></div>
+            <div class="meta"><span class="cat">Sleep</span><span class="grade grade--moderate">Moderate</span></div>
+            <h3>Magnesium for sleep: <em>which form,</em> what dose</h3>
+            <span class="small muted">8 min read</span>
+          </a>
+          <a class="story" href="#reviews">
+            <div class="media soft r-43"><img style="object-position:45% 30%" src="img/skin-glow.jpg" alt="A woman with glowing skin, eyes closed, in warm sunset light by the water"></div>
+            <div class="meta"><span class="cat">Skin</span><span class="grade grade--moderate">Moderate</span></div>
+            <h3>Does collagen <em>actually</em> work?</h3>
+            <span class="small muted">12 min read</span>
+          </a>
+          <a class="story" href="#reviews">
+            <div class="media soft r-43"><img src="img/serum-bottles.jpg" alt="Three glass serum dropper bottles on marble with olive leaves"></div>
+            <div class="meta"><span class="cat">Skin</span><span class="grade grade--strong">Strong</span></div>
+            <h3>Retinoids, from gentlest to strongest</h3>
+            <span class="small muted">11 min read</span>
+          </a>
+          <a class="story" href="#reviews">
+            <div class="media soft r-43"><img src="img/supplement-bowl.jpg" alt="A stone bowl of supplement capsules and softgels among leaves and white flowers"></div>
+            <div class="meta"><span class="cat">Longevity</span><span class="grade grade--limited">Limited</span></div>
+            <h3>NAD+ boosters: <em>promising in mice,</em> unproven in people</h3>
+            <span class="small muted">14 min read</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="band" id="topics" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Explore by goal</span>
+          <h2 class="h-l">Start with what you <em>care about</em></h2>
+        </div>
+      </div>
+      <div class="topics">
+        <a class="topic" href="#topics"><h3><em>Longevity</em></h3><ul><li>NAD+, rapamycin, metformin</li><li>Biological age tests</li><li>Fasting windows</li></ul><span class="go">Explore →</span></a>
+        <a class="topic" href="#topics"><h3><em>Skin</em></h3><ul><li>Retinoids and peptides</li><li>Sunscreen, decoded</li><li>In-clinic treatments</li></ul><span class="go">Explore →</span></a>
+        <a class="topic" href="#topics"><h3><em>Supplements</em></h3><ul><li>What's worth taking after 40</li><li>Doses used in studies</li><li>Third-party testing</li></ul><span class="go">Explore →</span></a>
+        <a class="topic" href="#topics"><h3><em>Sleep &amp; recovery</em></h3><ul><li>Magnesium, glycine, melatonin</li><li>Wearables and HRV</li><li>Light and temperature</li></ul><span class="go">Explore →</span></a>
+        <a class="topic" href="#topics"><h3><em>Nutrition</em></h3><ul><li>Protein after 40</li><li>Greens powders, rated</li><li>Polyphenols and berries</li></ul><span class="go">Explore →</span></a>
+        <a class="topic" href="#topics"><h3><em>Movement</em></h3><ul><li>Zone 2 and VO₂ max</li><li>Strength for longevity</li><li>Recovery tools</li></ul><span class="go">Explore →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROWS -->
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C200 54 420 56 640 34C860 12 1080 10 1260 28C1350 37 1410 40 1440 38V64H0Z"/></svg>
+  <section class="band band--sage">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Inside every review</span>
+          <h2 class="h-l">Three answers, <em>before you buy anything</em></h2>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <div class="row-media"><div class="media pebble-a r-43"><img src="img/reading-research.jpg" alt="A woman reading a book with a cup of coffee in a sunlit room"></div></div>
+          <div class="row-copy">
+            <span class="eyebrow">Does it work?</span>
+            <h3>The rating</h3>
+            <p>One clear rating per outcome, so you can see that something helps skin hydration but not deep wrinkles.</p>
+            <div class="specimen">
+              <div class="specimen-line"><span>Skin hydration</span><span class="grade grade--moderate">Moderate</span></div>
+              <div class="specimen-line"><span>Deep wrinkles</span><span class="grade grade--limited">Limited</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-media"><div class="media pebble-b r-43"><img src="img/capsules-stone.jpg" alt="Supplement capsules resting on weathered stone among wild herbs"></div></div>
+          <div class="row-copy">
+            <span class="eyebrow">How much?</span>
+            <h3>The dose</h3>
+            <p>The amounts used in the studies, how long people took them, and the form that was tested. Not the label's suggestion.</p>
+            <div class="specimen">
+              <div class="specimen-line"><span>Dose used in studies</span><span class="dose">[X–Y g a day]</span></div>
+              <div class="specimen-line"><span>How long</span><span class="dose">[8–12 weeks]</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-media"><div class="media leafy r-32"><img src="img/clinician-consult.jpg" alt="A clinician and a patient talking in a bright room with an arched window onto trees"></div></div>
+          <div class="row-copy">
+            <span class="eyebrow">Should I?</span>
+            <h3>The verdict</h3>
+            <p>Who it's for, who should skip it, and when to talk to your own doctor before starting. Sometimes the honest answer is that you don't need it.</p>
+            <div class="specimen">
+              <div class="specimen-line"><span>Worth trying if</span><span class="muted">[…]</span></div>
+              <div class="specimen-line"><span>Skip it if</span><span class="muted">[…]</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1)"><path d="M0 40C180 8 360 8 560 30C760 52 980 60 1180 34C1300 18 1380 16 1440 22V64H0Z"/></svg>
+
+  <!-- COMPARE -->
+  <section class="band">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Why Kalivae</span>
+          <h2 class="h-l">Not another <em>wellness blog</em></h2>
+        </div>
+      </div>
+      <div class="compare">
+        <div class="compare-col compare-col--us">
+          <h3>Kalivae</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13c3 2 4 4 5 5 3-6 6-9 9-12"/></svg>A gold, silver or bronze rating on every claim</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13c3 2 4 4 5 5 3-6 6-9 9-12"/></svg>Links to the original research, not other blogs</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13c3 2 4 4 5 5 3-6 6-9 9-12"/></svg>The doses that were actually studied</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13c3 2 4 4 5 5 3-6 6-9 9-12"/></svg>We tell you when to skip a product</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13c3 2 4 4 5 5 3-6 6-9 9-12"/></svg>Every guide shows the date it was last updated</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-col--them">
+          <h3>The usual wellness content</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 12c4-1 8 1 12 0"/></svg>Bold claims with no sense of how sure anyone is</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 12c4-1 8 1 12 0"/></svg>Studies cited selectively, if at all</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 12c4-1 8 1 12 0"/></svg>Doses taken from the label</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 12c4-1 8 1 12 0"/></svg>Everything is a must-have</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 12c4-1 8 1 12 0"/></svg>No date, so you can't tell if it's current</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="band shop-band" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">The shortlist</span>
+          <h2 class="h-l">Editor's picks, <em>rated first</em></h2>
+        </div>
+        <div class="head-links">
+          <a class="link" id="edit-picks" href="#admin" hidden>Edit picks</a>
+          <a class="link" href="#reviews">See every pick →</a>
+        </div>
+      </div>
+      <div class="shop" id="picks-grid">
+        <article class="prod prod--kr">
+          <div class="prod-media">
+            <div class="ph arch r-45" data-label="Product · 4:5 · bone backdrop"></div>
+            <span class="spark" style="left:50%;top:-1%;--s:12px;--dx:0px;--dy:-18px;--d:0s"></span>
+            <span class="spark" style="left:14%;top:11%;--s:9px;--dx:-13px;--dy:-12px;--d:.8s"></span>
+            <span class="spark" style="left:87%;top:9%;--s:11px;--dx:14px;--dy:-12px;--d:1.7s"></span>
+            <span class="spark" style="left:-1.5%;top:44%;--s:8px;--dx:-16px;--dy:-2px;--d:2.5s"></span>
+            <span class="spark" style="left:101.5%;top:62%;--s:10px;--dx:16px;--dy:2px;--d:3.2s"></span>
+            <span class="spark" style="left:4%;top:94%;--s:9px;--dx:-12px;--dy:12px;--d:3.9s"></span>
+            <span class="spark" style="left:96%;top:97%;--s:8px;--dx:12px;--dy:12px;--d:1.2s"></span>
+            <span class="kr" role="img" aria-label="Kalivae Recommended">
+              <span class="kr-glass" aria-hidden="true"></span>
+              <svg class="gem" viewBox="0 0 224 46" preserveAspectRatio="none" aria-hidden="true">
+                <polygon class="f3" points="18,0 65,0 47,8 26,8"/><polygon class="f1" points="65,0 112,0 112,8 47,8"/><polygon class="f2" points="112,0 159,0 177,8 112,8"/><polygon class="f4" points="159,0 206,0 198,8 177,8"/>
+                <polygon class="f5" points="26,38 47,38 65,46 18,46"/><polygon class="f4" points="47,38 112,38 112,46 65,46"/><polygon class="f6" points="112,38 177,38 159,46 112,46"/><polygon class="f5" points="177,38 198,38 206,46 159,46"/>
+                <polygon class="f2" points="0,23 18,0 26,8 14,23"/><polygon class="f6" points="0,23 14,23 26,38 18,46"/>
+                <polygon class="f5" points="206,0 224,23 210,23 198,8"/><polygon class="f4" points="210,23 224,23 206,46 198,38"/>
+                <polygon class="tbl" points="14,23 26,8 198,8 210,23 198,38 26,38"/>
+                <polygon class="shine" points="26,8 104,8 76,38 26,38 14,23"/>
+                <path class="cut" d="M47 8L65 0M112 0V8M177 8L159 0M47 38L65 46M112 38V46M177 38L159 46M14 23H0M210 23H224"/>
+                <polygon class="cut" points="14,23 26,8 198,8 210,23 198,38 26,38"/>
+                <polygon class="edge" points="0,23 18,0 206,0 224,23 206,46 18,46"/>
+              </svg>
+              <b aria-hidden="true">Kalivae Recommended</b>
+            </span>
+          </div>
+          <div class="prod-top"><span class="cat">Supplements</span><span class="grade grade--strong">Strong</span></div>
+          <p class="pick-note">Our top pick in this category</p>
+          <h3>[Creatine monohydrate pick]</h3>
+          <p>[One line: why it's the pick, e.g. third-party tested, fair price per dose.]</p>
+          <div class="prod-foot"><span class="price">[$0.00 / serving]</span><a class="btn btn--ghost btn--sm" href="#" rel="sponsored nofollow noopener">Check price</a></div>
+        </article>
+        <article class="prod">
+          <div class="ph arch r-45" data-label="Product · 4:5 · bone backdrop"></div>
+          <div class="prod-top"><span class="cat">Skin</span><span class="grade grade--strong">Strong</span></div>
+          <h3>[Retinoid serum pick]</h3>
+          <p>[One line: strength, who it suits, main trade-off.]</p>
+          <div class="prod-foot"><span class="price">[$00]</span><a class="btn btn--ghost btn--sm" href="#" rel="sponsored nofollow noopener">Check price</a></div>
+        </article>
+        <article class="prod">
+          <div class="ph arch r-45" data-label="Product · 4:5 · bone backdrop"></div>
+          <div class="prod-top"><span class="cat">Sleep</span><span class="grade grade--moderate">Moderate</span></div>
+          <h3>[Magnesium glycinate pick]</h3>
+          <p>[One line: form, dose per capsule, testing.]</p>
+          <div class="prod-foot"><span class="price">[$0.00 / serving]</span><a class="btn btn--ghost btn--sm" href="#" rel="sponsored nofollow noopener">Check price</a></div>
+        </article>
+        <article class="prod">
+          <div class="ph arch r-45" data-label="Product · 4:5 · bone backdrop"></div>
+          <div class="prod-top"><span class="cat">Nutrition</span><span class="grade grade--moderate">Moderate</span></div>
+          <h3>[Greens powder pick]</h3>
+          <p>[One line: what's in it, taste, cost.]</p>
+          <div class="prod-foot"><span class="price">[$0.00 / serving]</span><a class="btn btn--ghost btn--sm" href="#" rel="sponsored nofollow noopener">Check price</a></div>
+        </article>
+      </div>
+      <p class="disclose">The diamond marks our top pick in a category. <a href="#faq">What it takes to earn one</a>. We may earn a commission when you buy through these links. It never changes our ratings.</p>
+    </div>
+  </section>
+
+  <!-- QUIZ LEAD MAGNET -->
+  <svg class="wave wave--deep" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36C240 6 460 6 700 28C940 50 1160 58 1340 36C1390 30 1420 26 1440 24V64H0Z"/></svg>
+  <section class="lead-band" id="protocol">
+    <div class="wrap quiz-wrap">
+      <header class="quiz-intro">
+        <span class="eyebrow">Personalized · 2 minutes</span>
+        <h2 class="h-l">Your <em>Longevity Protocol</em></h2>
+        <p>Answer six quick questions and we'll send you a one-page plan — the habits and products with the strongest evidence for your goals, with doses used in the studies and clear notes on who should skip each one.</p>
+      </header>
+      <div class="quiz-card">
+        <div class="quiz" id="quiz" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+  <svg class="wave wave--deep" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1)"><path d="M0 28C220 56 420 58 640 36C860 14 1060 8 1240 26C1330 35 1400 40 1440 38V64H0Z"/></svg>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap faq-grid">
+      <div style="display:grid;gap:16px;align-content:start">
+        <span class="eyebrow">Questions</span>
+        <h2 class="h-l">Good questions <em>deserve sources</em></h2>
+        <p class="muted">Can't find your answer? <a href="#faq">Write to us</a>.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>What is Kalivae?</summary><p>An independent site about longevity, skin health and supplements. We read the research, rate the evidence, and tell you plainly what's worth your time and money.</p></details>
+        <details><summary>What do gold, silver and bronze mean?</summary><p>Gold means strong evidence: several well-designed human trials that agree. Silver means moderate evidence: some human data that's small, short or mixed. Bronze means limited evidence: mostly animal, lab or anecdotal.</p></details>
+        <details><summary>What does "Kalivae Recommended" mean?</summary><p>It's our single top pick in a category. To earn the diamond, a product needs gold-rated evidence for what it claims, independent third-party testing, and a fair price for the dose you actually need.</p></details>
+        <details><summary>How do you make money?</summary><p>Through affiliate commissions when readers buy products we recommend. Brands can't pay for a rating, and we'll tell you to skip a product when the evidence says so.</p></details>
+        <details><summary>Is this medical advice?</summary><p>No. Kalivae is educational. Talk to your clinician before starting a new supplement or routine, especially if you're pregnant, nursing or take medication.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="band" style="padding-top:0">
+    <div class="wrap closing">
+      <h2 class="h-xl">Aging is certain.<br><em>The hype isn't.</em></h2>
+      <div class="actions">
+        <a class="btn btn--primary" href="#protocol">Take the quiz</a>
+        <a class="btn btn--ghost" href="#reviews">Browse the reviews</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 8 360 8 560 30C760 52 980 60 1180 34C1300 18 1380 16 1440 22V64H0Z"/></svg>
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top" aria-label="Kalivae home">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path class="mark-stem" d="M7 25L2.5 29.5"/><path class="mark-a" d="M6 26C5 14 13 4.5 29 3C29.5 18 20 27.5 6 26Z"/><path class="mark-b" d="M7.5 24.5L24 8M12 19.5L11 13.5M12 19.5L18 20.5M16.5 15L16 9.5M16.5 15L22 15.5M20.5 11L20.5 7.5M20.5 11L24.5 11"/></svg>
+          <span>Kalivae</span>
+        </a>
+        <p>Longevity, skin and supplement research, rated in plain English.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#topics">Longevity</a></li><li><a href="#topics">Skin</a></li><li><a href="#topics">Supplements</a></li><li><a href="#topics">Sleep &amp; recovery</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#method">How our ratings work</a></li><li><a href="#faq">About us</a></li><li><a href="#faq">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="#faq">Affiliate disclosure</a></li><li><a href="#faq">Medical disclaimer</a></li><li><a href="#faq">Privacy policy</a></li><li><a href="#faq">Terms of use</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <p class="signoff">Age well. Know why.</p>
+      <p><strong>Medical disclaimer:</strong> Kalivae publishes educational content, not medical advice. Statements about supplements have not been evaluated by the FDA, and products discussed are not intended to diagnose, treat, cure or prevent any disease.</p>
+      <p><strong>Affiliate disclosure:</strong> We may earn a commission when you buy through links on our site. It never changes our ratings.</p>
+      <p>© <span id="year">2026</span> Kalivae. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /site-view -->
+
+<div id="admin-view" hidden>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Back to the Kalivae homepage">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path class="mark-stem" d="M7 25L2.5 29.5"/><path class="mark-a" d="M6 26C5 14 13 4.5 29 3C29.5 18 20 27.5 6 26Z"/><path class="mark-b" d="M7.5 24.5L24 8M12 19.5L11 13.5M12 19.5L18 20.5M16.5 15L16 9.5M16.5 15L22 15.5M20.5 11L20.5 7.5M20.5 11L24.5 11"/></svg>
+      <span>Kalivae</span><small>Admin</small>
+    </a>
+    <div class="top-actions">
+      <a class="btn btn--quiet" href="#top">View homepage</a>
+      <button class="btn btn--primary" type="button" id="add-pick" disabled>Add a pick</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Editor's picks, <em>rated first</em></h1>
+    <p>Each card here is one product in the homepage's Editor's picks row. Edit the details, choose its evidence rating, add one or more retailer links for the Check price button, and switch Kalivae Recommended on for your top pick. Save a card to publish its changes to the homepage.</p>
+    <p class="notice" id="notice" hidden></p>
+  </section>
+  <div class="list" id="list">
+    <div class="empty" id="loading"><h2>Loading your picks…</h2><p>Connecting to the site's database.</p></div>
+  </div>
+
+  <section class="intro" id="signups-intro" style="padding-top: 48px">
+    <h1>Quiz <em>signups</em></h1>
+    <p>Everyone who completes the Longevity Protocol quiz lands here with the goals they chose and the products the quiz suggested. Copy a batch of emails to send the one-page PDF, or hook the quiz into your email provider later so it goes out automatically.</p>
+    <p class="notice" id="signups-notice" hidden></p>
+  </section>
+  <div id="signups-tools" hidden style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px">
+    <button class="btn btn--ghost" type="button" id="copy-emails">Copy emails</button>
+    <span class="hint" id="signups-count" style="color:var(--muted);font-size:13px"></span>
+  </div>
+  <div class="list" id="signups-list"></div>
+</main>
+
+<template id="signup-tpl">
+  <article class="pick">
+    <div class="pick-head">
+      <h2><span class="num"></span><span data-s="email"></span></h2>
+      <div class="pick-tools"><span class="status" data-s="when"></span></div>
+    </div>
+    <div class="grid" style="grid-template-columns: 1fr">
+      <div class="fields">
+        <div class="field"><span class="legend">Priority habits</span><ul data-s="habits" style="margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:4px;font-size:14.5px"></ul></div>
+        <div class="field"><span class="legend">Product matches</span><ul data-s="products" style="margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:4px;font-size:14.5px"></ul></div>
+        <div class="field"><span class="legend">Their answers</span><div data-s="answers" style="display:grid;gap:4px;color:var(--muted);font-size:13.5px"></div></div>
+      </div>
+    </div>
+  </article>
+</template>
+
+<template id="pick-tpl">
+  <article class="pick">
+    <div class="pick-head">
+      <h2><span class="num"></span><span class="t-title">Untitled pick</span></h2>
+      <div class="pick-tools">
+        <button class="btn btn--quiet" type="button" data-act="up" aria-label="Move pick up"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+        <button class="btn btn--quiet" type="button" data-act="down" aria-label="Move pick down"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="btn btn--quiet" type="button" data-act="delete">Delete</button>
+      </div>
+    </div>
+    <div class="confirm" data-confirm hidden>
+      <span>Delete this pick from the homepage? This can't be undone.</span>
+      <button class="btn btn--danger" type="button" data-act="confirm-delete">Delete pick</button>
+      <button class="btn btn--quiet" type="button" data-act="cancel-delete">Keep it</button>
+    </div>
+
+    <div class="grid">
+      <div class="photo">
+        <div class="photo-frame" data-photo>No photo yet</div>
+        <div class="photo-actions" data-photo-actions>
+          <label class="btn btn--ghost file-label">Upload photo<input type="file" accept="image/png,image/jpeg,image/webp" data-f="file"></label>
+          <button class="btn btn--quiet" type="button" data-act="remove-photo" hidden>Remove</button>
+        </div>
+        <p class="hint" data-photo-hint>A 4:5 photo works best.</p>
+      </div>
+
+      <div class="fields">
+        <div class="row2">
+          <div class="field"><label data-for="category">Category</label><input type="text" data-f="category" list="cats" maxlength="40" placeholder="Supplements"></div>
+          <div class="field"><label data-for="price">Price shown on the card</label><input type="text" data-f="price" maxlength="40" placeholder="$0.42 / serving"></div>
+        </div>
+        <div class="field"><label data-for="title">Title</label><input type="text" data-f="title" maxlength="90" placeholder="Creatine monohydrate"></div>
+        <div class="field"><label data-for="description">Description</label><textarea data-f="description" maxlength="220" placeholder="Why it's the pick, in one or two sentences."></textarea><span class="counter" data-counter></span></div>
+        <fieldset>
+          <legend class="legend">Evidence rating</legend>
+          <div class="ratings">
+            <label class="rate"><input type="radio" value="strong" data-f="rating"><span class="grade grade--strong">Strong</span></label>
+            <label class="rate"><input type="radio" value="moderate" data-f="rating"><span class="grade grade--moderate">Moderate</span></label>
+            <label class="rate"><input type="radio" value="limited" data-f="rating"><span class="grade grade--limited">Limited</span></label>
+          </div>
+        </fieldset>
+        <div class="kr-row">
+          <div class="kr-label">
+            <svg viewBox="0 0 224 46" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,23 18,0 206,0 224,23 206,46 18,46" style="fill:var(--ice-4)"/><polygon points="14,23 26,8 198,8 210,23 198,38 26,38" style="fill:var(--ice-1)"/><polygon points="0,23 18,0 206,0 224,23 206,46 18,46" style="fill:none;stroke:var(--ice-6);stroke-width:3"/></svg>
+            <div><strong data-for="recommended">Kalivae Recommended</strong><span>Adds the gem badge and sparkling border on the homepage.</span></div>
+          </div>
+          <span class="switch"><input type="checkbox" role="switch" data-f="recommended"><span class="track"></span></span>
+          <p class="kr-warn" data-kr-warn hidden></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="links">
+      <div class="links-head">
+        <span class="legend">Check price links</span>
+        <span class="hint">One link opens directly. Two or more show a "Compare retailers" menu.</span>
+      </div>
+      <div class="links-list" data-links style="display:grid;gap:10px"></div>
+      <div><button class="btn btn--ghost" type="button" data-act="add-link">Add a retailer link</button></div>
+    </div>
+
+    <div class="pick-foot">
+      <p class="status" data-status role="status" aria-live="polite"></p>
+      <button class="btn btn--primary" type="button" data-act="save">Save changes</button>
+    </div>
+  </article>
+</template>
+
+<template id="link-tpl">
+  <div class="link-row">
+    <div class="inputs">
+      <label>Retailer<input type="text" data-l="retailer" maxlength="40" placeholder="Amazon"></label>
+      <label>Affiliate link<input type="url" data-l="url" maxlength="2000" placeholder="https://"></label>
+      <label>Price (optional)<input type="text" data-l="price" maxlength="30" placeholder="$29.99"></label>
+    </div>
+    <button class="btn btn--quiet" type="button" data-act="remove-link" aria-label="Remove this link">Remove</button>
+    <p class="link-err" hidden></p>
+  </div>
+</template>
+
+<datalist id="cats"><option value="Supplements"><option value="Skin"><option value="Sleep"><option value="Nutrition"><option value="Longevity"><option value="Movement"></datalist>
+</div>
+
+<template id="kr-tpl">
+  <span class="spark" style="left:50%;top:-1%;--s:12px;--dx:0px;--dy:-18px;--d:0s"></span>
+  <span class="spark" style="left:14%;top:11%;--s:9px;--dx:-13px;--dy:-12px;--d:.8s"></span>
+  <span class="spark" style="left:87%;top:9%;--s:11px;--dx:14px;--dy:-12px;--d:1.7s"></span>
+  <span class="spark" style="left:-1.5%;top:44%;--s:8px;--dx:-16px;--dy:-2px;--d:2.5s"></span>
+  <span class="spark" style="left:101.5%;top:62%;--s:10px;--dx:16px;--dy:2px;--d:3.2s"></span>
+  <span class="spark" style="left:4%;top:94%;--s:9px;--dx:-12px;--dy:12px;--d:3.9s"></span>
+  <span class="spark" style="left:96%;top:97%;--s:8px;--dx:12px;--dy:12px;--d:1.2s"></span>
+  <span class="kr" role="img" aria-label="Kalivae Recommended">
+    <span class="kr-glass" aria-hidden="true"></span>
+    <svg class="gem" viewBox="0 0 224 46" preserveAspectRatio="none" aria-hidden="true">
+      <polygon class="f3" points="18,0 65,0 47,8 26,8"/><polygon class="f1" points="65,0 112,0 112,8 47,8"/><polygon class="f2" points="112,0 159,0 177,8 112,8"/><polygon class="f4" points="159,0 206,0 198,8 177,8"/>
+      <polygon class="f5" points="26,38 47,38 65,46 18,46"/><polygon class="f4" points="47,38 112,38 112,46 65,46"/><polygon class="f6" points="112,38 177,38 159,46 112,46"/><polygon class="f5" points="177,38 198,38 206,46 159,46"/>
+      <polygon class="f2" points="0,23 18,0 26,8 14,23"/><polygon class="f6" points="0,23 14,23 26,38 18,46"/>
+      <polygon class="f5" points="206,0 224,23 210,23 198,8"/><polygon class="f4" points="210,23 224,23 206,46 198,38"/>
+      <polygon class="tbl" points="14,23 26,8 198,8 210,23 198,38 26,38"/>
+      <polygon class="shine" points="26,8 104,8 76,38 26,38 14,23"/>
+      <path class="cut" d="M47 8L65 0M112 0V8M177 8L159 0M47 38L65 46M112 38V46M177 38L159 46M14 23H0M210 23H224"/>
+      <polygon class="cut" points="14,23 26,8 198,8 210,23 198,38 26,38"/>
+      <polygon class="edge" points="0,23 18,0 206,0 224,23 206,46 18,46"/>
+    </svg>
+    <b aria-hidden="true">Kalivae Recommended</b>
+  </span>
+</template>
+
+<script>
+/* Personalized longevity quiz: lead magnet.
+   Answers are kept on the page; email + answers save to each visitor's private subtree
+   so the site's owner can see signups on the admin page, where every signup also lists
+   the top habits and products the quiz suggested. */
+(function () {
+  "use strict";
+  var mount = document.getElementById("quiz");
+  if (!mount) return;
+
+  var QUESTIONS = [
+    { id: "goals", type: "multi", min: 1, max: 3,
+      title: "What matters most to you right now?",
+      hint: "Pick up to three. We'll build your plan around them.",
+      options: [
+        { v: "strength", label: "Strength & muscle" },
+        { v: "sleep", label: "Better sleep" },
+        { v: "skin", label: "Healthy skin aging" },
+        { v: "longevity", label: "Longevity basics" },
+        { v: "nutrition", label: "Fill nutrition gaps" }
+      ] },
+    { id: "diet", type: "single",
+      title: "Which best describes your diet?",
+      options: [
+        { v: "omnivore", label: "Omnivore — I eat meat or fish" },
+        { v: "vegetarian", label: "Vegetarian" },
+        { v: "vegan", label: "Vegan" }
+      ] },
+    { id: "protein", type: "single",
+      title: "Do you get enough protein from food?",
+      hint: "Rough guide: about 0.7–1 g per pound of body weight if you're training.",
+      options: [
+        { v: "yes", label: "Yes, I prioritise it" },
+        { v: "sometimes", label: "Sometimes" },
+        { v: "no", label: "Not really" }
+      ] },
+    { id: "sleep", type: "single",
+      title: "How is your sleep lately?",
+      showIf: function (a) { return (a.goals || []).indexOf("sleep") >= 0; },
+      options: [
+        { v: "good", label: "Mostly good" },
+        { v: "variable", label: "Variable — some rough nights" },
+        { v: "poor", label: "Often restless or waking up tired" }
+      ] },
+    { id: "skinConcerns", type: "multi", min: 0, max: 5,
+      title: "Which skin concerns do you have?",
+      hint: "Pick any that apply.",
+      showIf: function (a) { return (a.goals || []).indexOf("skin") >= 0; },
+      options: [
+        { v: "lines", label: "Fine lines & texture" },
+        { v: "dryness", label: "Dryness or tightness" },
+        { v: "tone", label: "Uneven tone" },
+        { v: "sundamage", label: "Visible sun damage" },
+        { v: "tech", label: "Open to premium devices (e.g. red light)" }
+      ] },
+    { id: "sun", type: "single",
+      title: "How much daylight do you usually get?",
+      options: [
+        { v: "low", label: "Mostly indoors or covered up" },
+        { v: "some", label: "A bit most days" },
+        { v: "plenty", label: "Plenty — I'm often outdoors" }
+      ] },
+    { id: "safety", type: "multi", min: 0, max: 3, allowNone: true,
+      title: "A few quick safety checks",
+      hint: "Pick any that apply. Nothing here is a diagnosis — it just helps us leave the wrong things off your plan.",
+      options: [
+        { v: "pregnant", label: "I'm pregnant or nursing" },
+        { v: "anticoag", label: "I take blood thinners (e.g. warfarin)" },
+        { v: "kidney", label: "I have kidney disease" }
+      ] }
+  ];
+
+  function recommend(a) {
+    var g = a.goals || [], safety = a.safety || [], skin = a.skinConcerns || [];
+    var habits = [], products = [];
+
+    if (g.indexOf("strength") >= 0) habits.push({ t: "Resistance training 2–3× a week", w: "Protecting muscle and bone is the most important habit for aging well." });
+    if (g.indexOf("sleep") >= 0) habits.push({ t: "A consistent sleep window", w: "Same bedtime and wake time, seven days a week." });
+    if (g.indexOf("skin") >= 0) habits.push({ t: "Daily broad-spectrum sunscreen", w: "The single best thing you can do for skin aging." });
+    if (g.indexOf("longevity") >= 0) habits.push({ t: "Zone 2 cardio, about 150 min a week", w: "Builds the aerobic base linked to a longer healthspan." });
+    if (g.indexOf("nutrition") >= 0) habits.push({ t: "Protein and fibre at every meal", w: "Steadies hunger, supports muscle, feeds your microbiome." });
+    if (!habits.length) habits.push({ t: "Walk 7,000–10,000 steps a day", w: "The simplest habit with real evidence for longevity." });
+
+    function add(id, cat, title, why, bene, suit) { products.push({ id: id, cat: cat, title: title, why: why, bene: bene, suit: suit }); }
+
+    if (g.indexOf("skin") >= 0 || g.indexOf("longevity") >= 0)
+      add("spf", "Skin", "Broad-spectrum sunscreen, SPF 30+",
+          "The one skin item with gold-level evidence for aging and damage.",
+          "Protects skin from ultraviolet damage.",
+          "Reapply every two hours in direct sun.");
+    if (g.indexOf("strength") >= 0)
+      add("creatine", "Supplements", "Creatine monohydrate",
+          "You chose strength as a priority.",
+          "Supports high-intensity exercise and training performance.",
+          "3–5 g a day. Check with your clinician if you have kidney concerns.");
+    var sleepIssue = a.sleep && a.sleep !== "good";
+    if (sleepIssue && safety.indexOf("kidney") < 0)
+      add("magnesium", "Sleep", "Magnesium glycinate",
+          "You said your sleep is " + (a.sleep === "poor" ? "often restless" : "variable") + ".",
+          "Preliminary evidence for modest improvement in self-reported sleep.",
+          "Keep elemental magnesium at or below 350 mg a day from supplements. Not for anyone with kidney disease without a clinician.");
+    if (a.protein === "no" || a.protein === "sometimes")
+      add("protein", "Nutrition", "Whey or plant protein powder",
+          "You said you often fall short of protein from food.",
+          "A convenient addition to meet daily protein needs.",
+          "Whey if you tolerate dairy, pea or soy blend otherwise.");
+    if (a.sun === "low")
+      add("vitd", "Supplements", "Vitamin D3",
+          "You spend little time in sunlight.",
+          "Helps meet vitamin D needs and maintain normal bone health.",
+          "A blood test (25-OH-D) tells you if you actually need it. Avoid D3+K2 formulations if you take warfarin or similar anticoagulants.");
+    if (a.diet === "vegan" || a.diet === "vegetarian")
+      add("b12", "Supplements", "Vitamin B12",
+          "Plant-based diets often need a reliable B12 source.",
+          "Prevents inadequate B12 intake.",
+          "Cyanocobalamin or methylcobalamin, 250–500 µg daily.");
+    if (skin.indexOf("lines") >= 0 && safety.indexOf("pregnant") < 0)
+      add("retinol", "Skin", "Retinol or retinal",
+          "You chose fine lines and texture.",
+          "Improves visible signs of skin aging.",
+          "Start twice a week at night and build up slowly. Avoid during pregnancy or nursing.");
+    if (skin.indexOf("dryness") >= 0)
+      add("hyaluronic", "Skin", "Hyaluronic acid moisturizer",
+          "You said your skin feels dry or tight.",
+          "Hydrates skin and softens dehydration-related fine lines.",
+          "Apply to damp skin for better results.");
+    if (skin.indexOf("tone") >= 0)
+      add("niacinamide", "Skin", "Niacinamide serum",
+          "You chose uneven tone.",
+          "Controlled evidence supports improvements in tone and fine lines.",
+          "5–10% formulations work well. Introduce gradually.");
+    if (skin.indexOf("sundamage") >= 0)
+      add("vitc", "Skin", "Topical vitamin C serum",
+          "You chose visible sun damage.",
+          "Specific formulations support improvements in photoaging.",
+          "Look for 10–20% L-ascorbic acid, used mornings before sunscreen.");
+    if (skin.indexOf("tech") >= 0)
+      add("redlight", "Skin", "Red / near-infrared light device",
+          "You said you're open to premium technology.",
+          "Certain studied devices improve specific wrinkle outcomes.",
+          "Device-specific — look for FDA-cleared models with published clinical data.");
+    if (g.indexOf("nutrition") >= 0)
+      add("fiber", "Nutrition", "Soluble fibre supplement",
+          "You chose nutrition as a focus.",
+          "A convenient way to meet daily fibre needs.",
+          "Introduce slowly to let your gut adjust.");
+
+    return { habits: habits.slice(0, 3), products: products.slice(0, 4) };
+  }
+
+  // Progress through the quiz
+  var answers = {}, idx = 0, visible = [], dbPromise = null;
+
+  function recompute() {
+    visible = QUESTIONS.filter(function (q) { return !q.showIf || q.showIf(answers); });
+    if (idx >= visible.length) idx = visible.length - 1;
+  }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function dots(step, total) {
+    var row = el("div", "quiz-steps");
+    for (var i = 0; i < total; i++) {
+      var d = el("i");
+      if (i < step) d.className = "done";
+      else if (i === step) d.className = "now";
+      row.appendChild(d);
+    }
+    return row;
+  }
+
+  function renderQuestion(q, step, total) {
+    mount.replaceChildren();
+    mount.appendChild(dots(step, total + 1));
+    var head = el("div", "q-head");
+    head.appendChild(el("span", "q-meta", "Question " + (step + 1) + " of " + (total + 1)));
+    head.appendChild(el("h3", null, q.title));
+    if (q.hint) head.appendChild(el("p", "q-hint", q.hint));
+    mount.appendChild(head);
+
+    var current = answers[q.id];
+    if (q.type === "multi" && !Array.isArray(current)) current = answers[q.id] = [];
+    if (q.type === "single" && current == null) current = answers[q.id] = "";
+
+    var list = el("div", "q-options");
+    list.setAttribute("role", q.type === "multi" ? "group" : "radiogroup");
+    list.setAttribute("aria-label", q.title);
+    q.options.forEach(function (opt, i) {
+      var id = "q-" + q.id + "-" + i;
+      var row = el("label", "q-option");
+      row.setAttribute("for", id);
+      var input = el("input");
+      input.type = q.type === "multi" ? "checkbox" : "radio";
+      input.name = "q-" + q.id;
+      input.id = id;
+      input.value = opt.v;
+      if (q.type === "multi") input.checked = current.indexOf(opt.v) >= 0;
+      else input.checked = current === opt.v;
+      var box = el("span", "box" + (q.type === "single" ? " radio" : ""));
+      if (q.type === "multi") box.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>';
+      var lbl = el("span", "lbl", opt.label);
+      row.appendChild(input); row.appendChild(box); row.appendChild(lbl);
+      if (q.type === "multi" && current.length >= (q.max || Infinity) && current.indexOf(opt.v) < 0) {
+        row.classList.add("is-disabled"); input.disabled = true;
+      }
+      if (input.checked) row.classList.add("is-selected");
+      input.addEventListener("change", function () {
+        if (q.type === "multi") {
+          var arr = answers[q.id];
+          var at = arr.indexOf(opt.v);
+          if (input.checked && at < 0) arr.push(opt.v);
+          else if (!input.checked && at >= 0) arr.splice(at, 1);
+        } else {
+          answers[q.id] = opt.v;
+        }
+        err.textContent = "";
+        recompute();
+        renderQuestion(visible[idx], idx, visible.length);
+      });
+      list.appendChild(row);
+    });
+    mount.appendChild(list);
+
+    var err = el("p", "q-err", ""); err.id = "q-err"; err.setAttribute("aria-live", "polite");
+    mount.appendChild(err);
+
+    var nav = el("div", "q-nav");
+    var backBtn = el("button", "btn btn--ghost", step === 0 ? "" : "Back");
+    backBtn.type = "button"; backBtn.hidden = step === 0;
+    backBtn.addEventListener("click", function () { if (idx > 0) { idx--; renderQuestion(visible[idx], idx, visible.length); } });
+    var mid = el("span", "count", (step + 1) + " / " + (total + 1));
+    var nextBtn = el("button", "btn btn--primary", step === total ? "See my plan" : "Continue");
+    nextBtn.type = "button";
+    nextBtn.addEventListener("click", function () {
+      if (q.type === "multi" && !(q.allowNone && q.min === 0) && answers[q.id].length < (q.min || 0)) {
+        err.textContent = "Please pick at least " + (q.min || 1) + "."; return;
+      }
+      if (q.type === "single" && !answers[q.id]) { err.textContent = "Please pick one to continue."; return; }
+      recompute();
+      if (idx + 1 < visible.length) { idx++; renderQuestion(visible[idx], idx, visible.length); }
+      else { renderEmail(); }
+    });
+    nav.appendChild(backBtn); nav.appendChild(mid); nav.appendChild(nextBtn);
+    mount.appendChild(nav);
+
+    try { mount.closest(".quiz-card").scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {}
+  }
+
+  function renderEmail() {
+    mount.replaceChildren();
+    mount.appendChild(dots(visible.length, visible.length + 1));
+    var head = el("div", "q-head");
+    head.appendChild(el("span", "q-meta", "Last step"));
+    head.appendChild(el("h3", null, "Where should we send your plan?"));
+    head.appendChild(el("p", "q-hint", "We'll show your plan here and email you a one-page PDF to keep. One short email a week on new research, unsubscribe anytime, no sharing of your address."));
+    mount.appendChild(head);
+
+    var wrap = el("div", "q-email");
+    var label = el("label", null, "Email address"); label.setAttribute("for", "quiz-email");
+    var input = el("input"); input.id = "quiz-email"; input.type = "email"; input.required = true; input.autocomplete = "email"; input.placeholder = "you@example.com";
+    var check = el("label", "q-check");
+    var cb = el("input"); cb.type = "checkbox"; cb.id = "quiz-consent"; cb.required = true;
+    check.appendChild(cb); check.appendChild(document.createTextNode(" Yes, email me the plan and the weekly research digest."));
+    var err = el("p", "q-err", "");
+    wrap.appendChild(label); wrap.appendChild(input); wrap.appendChild(check); wrap.appendChild(err);
+    mount.appendChild(wrap);
+
+    var nav = el("div", "q-nav");
+    var back = el("button", "btn btn--ghost", "Back"); back.type = "button";
+    back.addEventListener("click", function () { idx = visible.length - 1; renderQuestion(visible[idx], idx, visible.length); });
+    var submit = el("button", "btn btn--primary", "Send my plan"); submit.type = "button";
+    submit.addEventListener("click", function () {
+      var v = input.value.trim();
+      input.classList.remove("is-invalid");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { err.textContent = "Enter a valid email, like you@example.com."; input.classList.add("is-invalid"); input.focus(); return; }
+      if (!cb.checked) { err.textContent = "Tick the box to confirm you'd like the email."; return; }
+      submit.disabled = true; submit.textContent = "Preparing your plan…";
+      saveSignup(v).finally(function () { renderResult(v); });
+    });
+    nav.appendChild(back); nav.appendChild(el("span", "count", "")); nav.appendChild(submit);
+    mount.appendChild(nav);
+    input.focus();
+  }
+
+  function saveSignup(email) {
+    if (!window.claude || typeof window.claude.use !== "function") return Promise.resolve();
+    if (!dbPromise) dbPromise = Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    return dbPromise.then(function (r) {
+      var db = r[0];
+      if (!db) return;
+      var rec = recommend(answers);
+      var doc = {
+        email: email,
+        submittedAt: new Date().toISOString(),
+        answers: answers,
+        habits: rec.habits.map(function (h) { return h.t; }),
+        products: rec.products.map(function (p) { return p.title; })
+      };
+      return db.collection("signups").add(doc).catch(function () {});
+    }).catch(function () {});
+  }
+
+  function renderResult(email) {
+    var rec = recommend(answers);
+    mount.replaceChildren();
+    var head = el("div", "r-head");
+    head.appendChild(el("span", "q-meta", "Your plan"));
+    var h = el("h3"); h.innerHTML = "Here's your <em>Longevity Protocol</em>"; head.appendChild(h);
+    head.appendChild(el("p", null, "We've emailed a one-page PDF to " + email + ". Here's a preview below."));
+    var box = el("div", "q-result");
+    box.appendChild(head);
+
+    box.appendChild(el("h4", "q-meta", "Priority habits"));
+    var habits = el("div", "q-habits");
+    rec.habits.forEach(function (h, i) {
+      var row = el("div", "q-habit");
+      row.appendChild(el("span", "n", (i + 1) + "."));
+      var body = document.createElement("div");
+      body.appendChild(el("h4", null, h.t));
+      body.appendChild(el("p", null, h.w));
+      row.appendChild(body);
+      habits.appendChild(row);
+    });
+    box.appendChild(habits);
+
+    if (rec.products.length) {
+      box.appendChild(el("h4", "q-meta", "Products matched to your answers"));
+      var prods = el("div", "q-prods");
+      rec.products.forEach(function (p) {
+        var card = el("div", "q-prod");
+        var top = el("div", "q-prod-head");
+        top.appendChild(el("span", "cat", p.cat));
+        card.appendChild(top);
+        card.appendChild(el("h4", null, p.title));
+        card.appendChild(el("p", "why", p.why));
+        card.appendChild(el("p", "bene", p.bene));
+        card.appendChild(el("p", "suit", p.suit));
+        prods.appendChild(card);
+      });
+      box.appendChild(prods);
+    }
+
+    var disc = el("p", "q-disclaimer");
+    disc.textContent = "Educational — not medical advice. Talk to your clinician before starting a new supplement, especially if you're pregnant, nursing or take medication. We may earn a commission if you buy through links we add later; it never changes a rating.";
+    box.appendChild(disc);
+    mount.appendChild(box);
+  }
+
+  recompute();
+  renderQuestion(visible[idx], idx, visible.length);
+})();
+</script>
+
+<script>
+/* Admin view for Editor's picks, opened at #admin. Saves to the site's shared database. */
+function whenClaude(ms) {
+  return new Promise(function (resolve) {
+    if (window.claude && typeof window.claude.use === "function") return resolve(window.claude);
+    var t0 = Date.now();
+    var iv = setInterval(function () {
+      if (window.claude && typeof window.claude.use === "function") { clearInterval(iv); resolve(window.claude); }
+      else if (Date.now() - t0 > ms) { clearInterval(iv); resolve(null); }
+    }, 100);
+  });
+}
+var startAdmin = (function () { var started = false; return function () { if (started) return; started = true; (async function () {
+  "use strict";
+  var list = document.getElementById("list");
+  var loading = document.getElementById("loading");
+  var notice = document.getElementById("notice");
+  var addBtn = document.getElementById("add-pick");
+
+  function say(msg, warn) { notice.textContent = msg; notice.className = "notice" + (warn ? " notice--warn" : ""); notice.hidden = !msg; }
+
+  var rt = await whenClaude(4000);
+  if (!rt) {
+    loading.querySelector("h2").textContent = "Open this page in Claude to edit picks";
+    loading.querySelector("p").textContent = "The admin page saves to the Kalivae site's shared database, which is only available on the published site in Claude.";
+    return;
+  }
+
+  var results = await Promise.all([window.claude.use("db"), window.claude.use("user"), window.claude.use("assets")]);
+  var db = results[0], user = results[1], assets = results[2];
+  if (!db) {
+    loading.querySelector("h2").textContent = "The picks database isn't available here";
+    loading.querySelector("p").textContent = "Sign in and open the Kalivae site from Claude to edit picks.";
+    return;
+  }
+  // Owner and editors can save. If the platform says nothing about this viewer, keep the controls and let a refused save decide.
+  var canEdit = user ? ((await user.canEdit()) || (await user.isOwner())) : true;
+  var readOnly = !canEdit;
+  if (readOnly) say("You can view picks here, but only the site's owner and editors can change them.", true);
+  else addBtn.disabled = false;
+
+  var col = db.collection("picks");
+  var cards = new Map();      // id -> { el, saved, draft, dirty }
+  var order = [];             // ids in display order
+  var RATINGS = ["strong", "moderate", "limited"];
+
+  function clone(o) { return JSON.parse(JSON.stringify(o || {})); }
+  function normalize(d) {
+    d = d || {};
+    return {
+      order: typeof d.order === "number" ? d.order : 0,
+      category: String(d.category || ""),
+      title: String(d.title || ""),
+      description: String(d.description || ""),
+      rating: RATINGS.indexOf(d.rating) >= 0 ? d.rating : "moderate",
+      recommended: !!d.recommended,
+      price: String(d.price || ""),
+      image: String(d.image || ""),
+      imageAlt: String(d.imageAlt || ""),
+      links: Array.isArray(d.links) ? d.links.map(function (l) { return { retailer: String((l && l.retailer) || ""), url: String((l && l.url) || ""), price: String((l && l.price) || "") }; }) : []
+    };
+  }
+  function q(el, sel) { return el.querySelector(sel); }
+  function setStatus(c, msg, kind) { var s = q(c.el, "[data-status]"); s.textContent = msg; s.className = "status" + (kind ? " " + kind : ""); }
+  function markDirty(c) {
+    c.dirty = true; c.el.classList.add("is-dirty"); setStatus(c, "Unsaved changes", "warn");
+    q(c.el, ".t-title").textContent = c.draft.title || "Untitled pick";
+    c.el.classList.toggle("is-kr", c.draft.recommended);
+    checkKr();
+  }
+  function isUrl(u) { try { var x = new URL(u); return x.protocol === "https:" || x.protocol === "http:"; } catch (e) { return false; } }
+
+  function renderPhoto(c) {
+    var frame = q(c.el, "[data-photo]");
+    frame.replaceChildren();
+    var rm = q(c.el, '[data-act="remove-photo"]');
+    if (c.draft.image) {
+      var img = document.createElement("img");
+      img.src = "/_blob/" + encodeURIComponent(c.draft.image);
+      img.alt = c.draft.title ? "Photo of " + c.draft.title : "Product photo";
+      img.onerror = function () { frame.textContent = "Photo couldn't load"; };
+      frame.appendChild(img);
+      rm.hidden = readOnly;
+    } else {
+      frame.textContent = "No photo yet";
+      rm.hidden = true;
+    }
+  }
+
+  function addLinkRow(c, link, idx) {
+    var row = document.getElementById("link-tpl").content.firstElementChild.cloneNode(true);
+    var key = c.id + "-" + idx + "-" + Math.random().toString(36).slice(2, 7);
+    row.querySelectorAll("[data-l]").forEach(function (inp) {
+      var f = inp.getAttribute("data-l");
+      inp.id = "link-" + f + "-" + key;
+      inp.value = link[f] || "";
+      inp.disabled = readOnly;
+      inp.addEventListener("input", function () { syncLinks(c); inp.classList.remove("is-invalid"); row.querySelector(".link-err").hidden = true; markDirty(c); });
+    });
+    row.querySelector('[data-act="remove-link"]').disabled = readOnly;
+    q(c.el, "[data-links]").appendChild(row);
+  }
+  function syncLinks(c) {
+    c.draft.links = Array.prototype.map.call(c.el.querySelectorAll(".link-row"), function (row) {
+      return { retailer: row.querySelector('[data-l="retailer"]').value.trim(), url: row.querySelector('[data-l="url"]').value.trim(), price: row.querySelector('[data-l="price"]').value.trim() };
+    });
+  }
+
+  function fill(c) {
+    var d = c.draft, el = c.el;
+    q(el, ".t-title").textContent = d.title || "Untitled pick";
+    el.querySelectorAll("[data-f]").forEach(function (inp) {
+      var f = inp.getAttribute("data-f");
+      if (f === "file") return;
+      if (f === "rating") inp.checked = inp.value === d.rating;
+      else if (f === "recommended") inp.checked = d.recommended;
+      else inp.value = d[f];
+    });
+    q(el, "[data-counter]").textContent = d.description.length + " / 220";
+    renderPhoto(c);
+    q(el, "[data-links]").replaceChildren();
+    d.links.forEach(function (l, i) { addLinkRow(c, l, i); });
+    el.classList.toggle("is-kr", d.recommended);
+    el.classList.remove("is-dirty");
+  }
+
+  function build(id) {
+    var el = document.getElementById("pick-tpl").content.firstElementChild.cloneNode(true);
+    var c = { id: id, el: el, saved: null, draft: null, dirty: false };
+    el.querySelectorAll("[data-f]").forEach(function (inp) {
+      var f = inp.getAttribute("data-f");
+      inp.id = f + "-" + id;
+      if (f === "rating") inp.name = "rating-" + id;
+      inp.disabled = readOnly;
+    });
+    el.querySelectorAll("[data-for]").forEach(function (lab) {
+      var f = lab.getAttribute("data-for");
+      if (lab.tagName === "LABEL") lab.setAttribute("for", f + "-" + id);
+      else q(el, '[data-f="' + f + '"]').setAttribute("aria-labelledby", (lab.id = "lbl-" + f + "-" + id));
+    });
+    if (readOnly) {
+      el.querySelectorAll("[data-act]").forEach(function (b) { b.disabled = true; });
+      q(el, "[data-photo-actions]").hidden = true;
+    }
+    if (!assets && !readOnly) {
+      q(el, ".file-label").hidden = true;
+      q(el, "[data-photo-hint]").textContent = "Photo uploads need editor access to the site.";
+    }
+
+    el.addEventListener("input", function (e) {
+      var f = e.target.getAttribute("data-f");
+      if (!f || f === "file") return;
+      if (f === "rating") c.draft.rating = e.target.value;
+      else if (f === "recommended") c.draft.recommended = e.target.checked;
+      else c.draft[f] = e.target.value;
+      if (f === "description") q(el, "[data-counter]").textContent = e.target.value.length + " / 220";
+      markDirty(c);
+    });
+    el.addEventListener("change", function (e) {
+      var f = e.target.getAttribute("data-f");
+      if (f === "rating") { c.draft.rating = e.target.value; markDirty(c); }
+      if (f === "recommended") { c.draft.recommended = e.target.checked; markDirty(c); }
+      if (f === "file" && e.target.files && e.target.files[0]) upload(c, e.target.files[0], e.target);
+    });
+    el.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-act]");
+      if (!b || b.disabled) return;
+      var act = b.getAttribute("data-act");
+      if (act === "save") save(c);
+      else if (act === "add-link") { addLinkRow(c, { retailer: "", url: "", price: "" }, c.draft.links.length); syncLinks(c); markDirty(c); var rows = el.querySelectorAll(".link-row"); rows[rows.length - 1].querySelector("input").focus(); }
+      else if (act === "remove-link") { b.closest(".link-row").remove(); syncLinks(c); markDirty(c); }
+      else if (act === "remove-photo") { c.draft.image = ""; renderPhoto(c); markDirty(c); }
+      else if (act === "delete") { q(el, "[data-confirm]").hidden = false; }
+      else if (act === "cancel-delete") { q(el, "[data-confirm]").hidden = true; }
+      else if (act === "confirm-delete") remove(c);
+      else if (act === "up" || act === "down") move(c, act === "up" ? -1 : 1);
+    });
+    cards.set(id, c);
+    return c;
+  }
+
+  async function upload(c, file, input) {
+    if (!assets) return;
+    if (file.size > 20 * 1024 * 1024) { setStatus(c, "That photo is over 20 MB. Choose a smaller file.", "err"); input.value = ""; return; }
+    setStatus(c, "Uploading photo…");
+    try {
+      var res = await assets.upload(file);
+      c.draft.image = res.id;
+      renderPhoto(c);
+      markDirty(c);
+      setStatus(c, "Photo uploaded. Save to show it on the homepage.", "warn");
+    } catch (err) {
+      var code = err && err.code;
+      setStatus(c, code === "unsupported_type" ? "Use a PNG, JPEG or WebP photo." :
+                   code === "too_large" ? "That photo is too large. Choose one under 20 MB." :
+                   code === "quota_or_state" ? "The site's photo storage is full. Remove unused photos first." :
+                   "The photo didn't upload. Try again in a moment.", "err");
+    }
+    input.value = "";
+  }
+
+  async function save(c) {
+    syncLinks(c);
+    var ok = true;
+    c.el.querySelectorAll(".link-row").forEach(function (row) {
+      var urlIn = row.querySelector('[data-l="url"]');
+      var ret = row.querySelector('[data-l="retailer"]').value.trim();
+      var u = urlIn.value.trim();
+      var err = row.querySelector(".link-err");
+      if (!u && !ret) return;
+      if (!isUrl(u)) { ok = false; urlIn.classList.add("is-invalid"); err.textContent = "Enter the full link, starting with https://"; err.hidden = false; }
+    });
+    if (!c.draft.title.trim()) { ok = false; q(c.el, '[data-f="title"]').classList.add("is-invalid"); }
+    if (!ok) { setStatus(c, "Fix the highlighted fields, then save.", "err"); return; }
+    q(c.el, '[data-f="title"]').classList.remove("is-invalid");
+
+    var body = normalize(c.draft);
+    body.title = body.title.trim(); body.category = body.category.trim(); body.description = body.description.trim(); body.price = body.price.trim();
+    body.links = body.links.filter(function (l) { return l.url; });
+    var btn = q(c.el, '[data-act="save"]');
+    btn.disabled = true; setStatus(c, "Saving…");
+    try {
+      await col.doc(c.id).set(body);
+      c.saved = clone(body); c.draft = clone(body); c.dirty = false;
+      fill(c);
+      setStatus(c, "Saved. It's live on the homepage.", "ok");
+    } catch (err) {
+      handleWriteError(c, err);
+    }
+    btn.disabled = readOnly;
+  }
+
+  function handleWriteError(c, err) {
+    var code = err && err.code;
+    if (code === "invalid_argument") { setStatus(c, "This account can't change picks. Ask the site's owner for editor access.", "err"); }
+    else if (code === "quota_exceeded") setStatus(c, "The site's database is full. Delete unused picks, then try again.", "err");
+    else setStatus(c, "That didn't save. Check your connection and try again.", "err");
+  }
+
+  async function remove(c) {
+    setStatus(c, "Deleting…");
+    try { await col.doc(c.id).delete(); }
+    catch (err) { handleWriteError(c, err); q(c.el, "[data-confirm]").hidden = true; }
+  }
+
+  async function move(c, dir) {
+    var i = order.indexOf(c.id), j = i + dir;
+    if (j < 0 || j >= order.length) return;
+    var other = cards.get(order[j]);
+    var a = c.saved ? c.saved.order : i, b = other.saved ? other.saved.order : j;
+    if (a === b) b = a + dir;
+    try {
+      await col.doc(c.id).update({ order: b });
+      await col.doc(other.id).update({ order: a });
+    } catch (err) { handleWriteError(c, err); }
+  }
+
+  function checkKr() {
+    var byCat = {};
+    cards.forEach(function (c) {
+      if (!c.draft || !c.draft.recommended) return;
+      var k = c.draft.category.trim().toLowerCase() || "(no category)";
+      (byCat[k] = byCat[k] || []).push(c);
+    });
+    cards.forEach(function (c) {
+      var w = q(c.el, "[data-kr-warn]");
+      var k = c.draft ? (c.draft.category.trim().toLowerCase() || "(no category)") : "";
+      var group = c.draft && c.draft.recommended ? byCat[k] : null;
+      if (group && group.length > 1) {
+        w.textContent = "Another " + (c.draft.category.trim() || "uncategorised") + " pick is also Kalivae Recommended. One diamond per category keeps it meaningful.";
+        w.hidden = false;
+      } else w.hidden = true;
+    });
+  }
+
+  function renumber() {
+    order.forEach(function (id, i) {
+      var c = cards.get(id);
+      q(c.el, ".num").textContent = (i + 1) + ".";
+      q(c.el, '[data-act="up"]').disabled = readOnly || i === 0;
+      q(c.el, '[data-act="down"]').disabled = readOnly || i === order.length - 1;
+    });
+  }
+
+  function showEmpty() {
+    list.replaceChildren();
+    var box = document.createElement("div");
+    box.className = "empty";
+    var h = document.createElement("h2"); h.textContent = "No picks yet";
+    var p = document.createElement("p"); p.textContent = readOnly ? "The site's editors haven't added any picks." : "Add your first pick. It will appear in the Editor's picks row on the homepage as soon as you save it.";
+    box.appendChild(h); box.appendChild(p);
+    if (!readOnly) { var b = document.createElement("button"); b.className = "btn btn--primary"; b.type = "button"; b.textContent = "Add a pick"; b.onclick = addPick; box.appendChild(b); }
+    list.appendChild(box);
+  }
+
+  col.orderBy("order").onSnapshot(function (snap) {
+    var seen = new Set();
+    order = [];
+    snap.docs.forEach(function (d) {
+      seen.add(d.id); order.push(d.id);
+      var data = normalize(d.data());
+      var c = cards.get(d.id) || build(d.id);
+      c.saved = clone(data);
+      if (!c.dirty) { c.draft = clone(data); fill(c); }
+      else if (c.draft) c.draft.order = data.order;
+    });
+    cards.forEach(function (c, id) { if (!seen.has(id)) { c.el.remove(); cards.delete(id); } });
+    if (!order.length) { showEmpty(); return; }
+    var frag = document.createDocumentFragment();
+    order.forEach(function (id) { frag.appendChild(cards.get(id).el); });
+    list.replaceChildren(frag);
+    renumber(); checkKr();
+  }, function () {
+    list.replaceChildren();
+    var box = document.createElement("div"); box.className = "empty";
+    var h = document.createElement("h2"); h.textContent = "Picks couldn't load";
+    var p = document.createElement("p"); p.textContent = "Reload the page to try again.";
+    box.appendChild(h); box.appendChild(p); list.appendChild(box);
+  });
+
+  async function addPick() {
+    if (readOnly) return;
+    var max = -1;
+    cards.forEach(function (c) { var o = c.saved ? c.saved.order : 0; if (o > max) max = o; });
+    addBtn.disabled = true;
+    try {
+      var ref = col.doc();
+      await ref.set(normalize({ order: max + 1, title: "New pick", category: "Supplements", rating: "moderate" }));
+      setTimeout(function () {
+        var c = cards.get(ref.id);
+        if (c) { c.el.scrollIntoView({ behavior: "smooth", block: "start" }); var t = q(c.el, '[data-f="title"]'); t.focus(); t.select(); }
+      }, 250);
+    } catch (err) {
+      say(err && err.code === "invalid_argument" ? "This account can't add picks. Ask the site's owner for editor access." : "The pick wasn't added. Try again in a moment.", true);
+    }
+    addBtn.disabled = false;
+  }
+  addBtn.addEventListener("click", addPick);
+
+  // ---- Signups panel ----
+  loadSignups(db).catch(function () {});
+
+  async function loadSignups(db) {
+    var intro = document.getElementById("signups-intro");
+    var tools = document.getElementById("signups-tools");
+    var listEl = document.getElementById("signups-list");
+    var countEl = document.getElementById("signups-count");
+    var noticeEl = document.getElementById("signups-notice");
+    var copyBtn = document.getElementById("copy-emails");
+    if (!db) return;
+
+    function emptyMsg(t, m) {
+      listEl.replaceChildren();
+      var box = document.createElement("div");
+      box.className = "empty";
+      var h = document.createElement("h2"); h.textContent = t;
+      var p = document.createElement("p"); p.textContent = m;
+      box.appendChild(h); box.appendChild(p); listEl.appendChild(box);
+    }
+
+    function render(docs) {
+      var tpl = document.getElementById("signup-tpl");
+      listEl.replaceChildren();
+      if (!docs.length) { emptyMsg("No signups yet", "Share the quiz from the homepage. Submissions appear here as soon as someone finishes."); countEl.textContent = ""; copyBtn.disabled = true; return; }
+      copyBtn.disabled = false;
+      countEl.textContent = docs.length + " signup" + (docs.length === 1 ? "" : "s") + " · newest first";
+      docs.sort(function (a, b) { return (b.submittedAt || "").localeCompare(a.submittedAt || ""); });
+      docs.forEach(function (d, i) {
+        var node = tpl.content.firstElementChild.cloneNode(true);
+        node.querySelector(".num").textContent = (i + 1) + ".";
+        node.querySelector('[data-s="email"]').textContent = d.email || "(no email)";
+        var when = d.submittedAt ? new Date(d.submittedAt).toLocaleString() : "";
+        node.querySelector('[data-s="when"]').textContent = when;
+        var hab = node.querySelector('[data-s="habits"]');
+        (d.habits || []).forEach(function (t) { var li = document.createElement("li"); li.textContent = t; hab.appendChild(li); });
+        var pr = node.querySelector('[data-s="products"]');
+        if ((d.products || []).length) (d.products || []).forEach(function (t) { var li = document.createElement("li"); li.textContent = t; pr.appendChild(li); });
+        else { var li = document.createElement("li"); li.textContent = "No product matches (they chose only broad habits)."; pr.appendChild(li); }
+        var ans = node.querySelector('[data-s="answers"]');
+        var a = d.answers || {};
+        var lines = [
+          ["Goals", (a.goals || []).join(", ") || "—"],
+          ["Diet", a.diet || "—"],
+          ["Protein from food", a.protein || "—"],
+          ["Sleep", a.sleep || "—"],
+          ["Skin concerns", (a.skinConcerns || []).join(", ") || "—"],
+          ["Daylight", a.sun || "—"],
+          ["Safety flags", (a.safety || []).join(", ") || "none"]
+        ];
+        lines.forEach(function (p) {
+          var row = document.createElement("div");
+          var k = document.createElement("strong"); k.textContent = p[0] + ": "; k.style.color = "var(--ink)";
+          row.appendChild(k); row.appendChild(document.createTextNode(p[1]));
+          ans.appendChild(row);
+        });
+        listEl.appendChild(node);
+      });
+    }
+
+    copyBtn.addEventListener("click", async function () {
+      var items = Array.prototype.map.call(listEl.querySelectorAll('[data-s="email"]'), function (e) { return e.textContent.trim(); }).filter(function (s) { return s && s !== "(no email)"; });
+      if (!items.length) return;
+      try { await navigator.clipboard.writeText(items.join(", ")); copyBtn.textContent = "Copied " + items.length + " emails"; }
+      catch (e) { copyBtn.textContent = "Clipboard blocked"; }
+      setTimeout(function () { copyBtn.textContent = "Copy emails"; }, 2500);
+    });
+
+    tools.hidden = false;
+    emptyMsg("Loading signups…", "Reading the latest submissions.");
+    try {
+      db.collection("signups").onSnapshot(function (snap) {
+        render(snap.docs.map(function (d) { return d.data(); }).filter(function (x) { return x && x.email; }));
+      }, function () {
+        if (noticeEl) { noticeEl.textContent = "Signups couldn't load live. Reload the page to try again."; noticeEl.className = "notice notice--warn"; noticeEl.hidden = false; }
+        emptyMsg("No signups to show", "Reload the page to try again.");
+      });
+    } catch (err) {
+      if (noticeEl) { noticeEl.textContent = "Signups couldn't load — this account may not have permission to read them."; noticeEl.className = "notice notice--warn"; noticeEl.hidden = false; }
+      emptyMsg("No signups to show", "Reload the page to try again.");
+    }
+  }
+})(); }; })();
+(function () {
+  var site = document.getElementById("site-view"), admin = document.getElementById("admin-view");
+  function route() {
+    var isAdmin = location.hash === "#admin";
+    site.hidden = isAdmin; admin.hidden = !isAdmin;
+    if (isAdmin) { startAdmin(); window.scrollTo(0, 0); }
+  }
+  window.addEventListener("hashchange", route);
+  route();
+})();
+</script>
+
+<script>
+/* Editor's picks: rendered from the site's shared database, edited on admin.html.
+   The cards written in the HTML above stay as the fallback when the database is unavailable. */
+(async function () {
+  if (!(await whenClaude(4000))) return;
+  var grid = document.getElementById("picks-grid");
+  var editLink = document.getElementById("edit-picks");
+  var RATING = { strong: "Strong", moderate: "Moderate", limited: "Limited" };
+
+  window.claude.use("user").then(function (u) {
+    if (!u) return;
+    Promise.all([u.canEdit(), u.isOwner()]).then(function (r) { if (r[0] || r[1]) editLink.hidden = false; });
+  });
+
+  var db = await window.claude.use("db");
+  if (!db) return;
+
+  function safeUrl(u) {
+    try { var x = new URL(String(u || "")); return (x.protocol === "https:" || x.protocol === "http:") ? x.href : null; }
+    catch (e) { return null; }
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function priceButton(links) {
+    var valid = (Array.isArray(links) ? links : []).map(function (l) {
+      return { retailer: String((l && l.retailer) || "").trim(), url: safeUrl(l && l.url), price: String((l && l.price) || "").trim() };
+    }).filter(function (l) { return l.url; });
+    if (!valid.length) return el("span", "soon", "Price coming soon");
+    if (valid.length === 1) {
+      var a = el("a", "btn btn--ghost btn--sm", "Check price");
+      a.href = valid[0].url; a.target = "_blank"; a.rel = "sponsored nofollow noopener";
+      if (valid[0].retailer) a.setAttribute("aria-label", "Check price at " + valid[0].retailer);
+      return a;
+    }
+    var d = el("details", "price-menu");
+    var s = el("summary", "btn btn--ghost btn--sm", "Check price");
+    var m = el("div", "menu");
+    m.appendChild(el("div", "menu-head", "Compare retailers"));
+    valid.forEach(function (l) {
+      var a = el("a");
+      a.href = l.url; a.target = "_blank"; a.rel = "sponsored nofollow noopener";
+      a.appendChild(el("span", null, l.retailer || new URL(l.url).hostname.replace(/^www\./, "")));
+      a.appendChild(el("span", null, l.price));
+      m.appendChild(a);
+    });
+    d.appendChild(s); d.appendChild(m);
+    return d;
+  }
+  function card(p) {
+    var art = el("article", "prod" + (p.recommended ? " prod--kr" : ""));
+    var media = el("div", "prod-media");
+    if (p.image) {
+      var box = el("div", "media arch r-45");
+      var img = el("img", "prod-img");
+      img.src = "/_blob/" + encodeURIComponent(p.image);
+      img.alt = String(p.imageAlt || p.title || "Product photo");
+      img.loading = "lazy";
+      img.onerror = function () { box.className = "ph arch r-45"; box.setAttribute("data-label", "Product photo"); img.remove(); };
+      box.appendChild(img); media.appendChild(box);
+    } else {
+      var ph = el("div", "ph arch r-45"); ph.setAttribute("data-label", "Product · 4:5 · bone backdrop");
+      media.appendChild(ph);
+    }
+    if (p.recommended) media.appendChild(document.getElementById("kr-tpl").content.cloneNode(true));
+    art.appendChild(media);
+
+    var top = el("div", "prod-top");
+    top.appendChild(el("span", "cat", String(p.category || "")));
+    var r = RATING[p.rating] ? p.rating : "moderate";
+    top.appendChild(el("span", "grade grade--" + r, RATING[r]));
+    art.appendChild(top);
+    if (p.recommended) art.appendChild(el("p", "pick-note", "Our top pick in this category"));
+    art.appendChild(el("h3", null, String(p.title || "Untitled pick")));
+    if (p.description) art.appendChild(el("p", null, String(p.description)));
+    var foot = el("div", "prod-foot");
+    foot.appendChild(el("span", "price", String(p.price || "")));
+    foot.appendChild(priceButton(p.links));
+    art.appendChild(foot);
+    return art;
+  }
+
+  db.collection("picks").orderBy("order").onSnapshot(function (snap) {
+    if (snap.empty) return;
+    var frag = document.createDocumentFragment();
+    snap.docs.forEach(function (d) { frag.appendChild(card(d.data() || {})); });
+    grid.replaceChildren(frag);
+  }, function () { /* keep the fallback cards */ });
+
+  // Only one retailer menu open at a time; close on outside click or Escape
+  document.addEventListener("toggle", function (e) {
+    var t = e.target;
+    if (t.classList && t.classList.contains("price-menu") && t.open) {
+      grid.querySelectorAll(".price-menu[open]").forEach(function (o) { if (o !== t) o.open = false; });
+    }
+  }, true);
+  document.addEventListener("click", function (e) {
+    grid.querySelectorAll(".price-menu[open]").forEach(function (o) { if (!o.contains(e.target)) o.open = false; });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") grid.querySelectorAll(".price-menu[open]").forEach(function (o) { o.open = false; });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var flow = document.getElementById("flow");
+  var t = document.getElementById("flow-toggle");
+  var pauseIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="3.5" height="12" rx="1.5"/><rect x="13.5" y="6" width="3.5" height="12" rx="1.5"/></svg>';
+  var playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+  function set(p) {
+    t.innerHTML = p ? playIcon : pauseIcon;
+    t.setAttribute("aria-label", p ? "Play scrolling topics" : "Pause scrolling topics");
+    t.setAttribute("aria-pressed", p ? "true" : "false");
+  }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { flow.classList.add("is-paused"); set(true); }
+  t.addEventListener("click", function () { set(flow.classList.toggle("is-paused")); });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
