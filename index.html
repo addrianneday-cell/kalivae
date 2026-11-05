@@ -895,12 +895,12 @@ ul { margin: 0; padding: 0; list-style: none; }
       </div>
       <div><h4>Explore</h4><ul><li><a href="#topics">Longevity</a></li><li><a href="#topics">Skin</a></li><li><a href="#topics">Supplements</a></li><li><a href="#topics">Sleep &amp; recovery</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#method">How our ratings work</a></li><li><a href="#faq">About us</a></li><li><a href="#faq">Contact</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="#faq">Affiliate disclosure</a></li><li><a href="#faq">Medical disclaimer</a></li><li><a href="#faq">Privacy policy</a></li><li><a href="#faq">Terms of use</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="methodology.html">How we grade</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="#faq">Contact</a></li></ul></div>
     </div>
     <div class="legal">
       <p class="signoff">Age well. Know why.</p>
       <p><strong>Medical disclaimer:</strong> Kalivae publishes educational content, not medical advice. Statements about supplements have not been evaluated by the FDA, and products discussed are not intended to diagnose, treat, cure or prevent any disease.</p>
-      <p><strong>Affiliate disclosure:</strong> We may earn a commission when you buy through links on our site. It never changes our ratings.</p>
+      <p><strong>Affiliate disclosure:</strong> Kalivae isn't currently enrolled in any affiliate program and doesn't earn commission on the product links on the site. When that changes, we'll disclose it on the page where each link appears. <a href="affiliate-disclosure.html">Read the full disclosure</a>.</p>
       <p>© <span id="year">2026</span> Kalivae. All rights reserved.</p>
     </div>
   </div>
@@ -1320,7 +1320,12 @@ ul { margin: 0; padding: 0; list-style: none; }
     var head = el("div", "q-head");
     head.appendChild(el("span", "q-meta", "One last step"));
     head.appendChild(el("h3", null, "Save your plan"));
-    head.appendChild(el("p", "q-hint", "Enter your email to see your personalized plan on this page. We won't email you unless you opt in to the newsletter below."));
+    var hint = el("p", "q-hint", "Enter your email to see your personalized plan on this page. We won't email you unless you opt in to the newsletter below. ");
+    var privacyLink = document.createElement("a");
+    privacyLink.href = "privacy.html"; privacyLink.target = "_blank"; privacyLink.rel = "noopener";
+    privacyLink.textContent = "Read what we collect.";
+    hint.appendChild(privacyLink);
+    head.appendChild(hint);
     mount.appendChild(head);
 
     var wrap = el("div", "q-email");
