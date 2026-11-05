@@ -213,6 +213,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
 .nav a:hover { color: var(--ink); }
 @media (min-width: 980px) { .nav { display: flex; } }
+.nav-biz { display: none; }
+@media (min-width: 720px) { .nav-biz { display: inline-flex; } }
 
 /* Hero */
 .hero { padding-block: 8px 0; }
@@ -365,6 +367,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Closing */
 .closing { display: grid; gap: 28px; justify-items: center; text-align: center; }
 .closing .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* "For businesses" band — compact, on-brand, not a hero */
+.biz-band { display: grid; gap: 32px; }
+@media (min-width: 860px) { .biz-band { grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; } }
+.biz-copy { display: grid; gap: 14px; min-width: 0; }
+.biz-lede { color: var(--muted); font-size: 17px; line-height: 1.65; max-width: 34em; }
+.biz-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.biz-side { background: var(--bg); border-radius: 28px; padding: 24px 28px; }
+.biz-side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.biz-side li { display: grid; gap: 4px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+.biz-side li:last-child { border-bottom: 0; padding-bottom: 0; }
+.biz-eyebrow { font: 500 11px/16px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--brand); }
+.biz-side li span:not(.biz-eyebrow) { font-size: 14.5px; color: var(--muted); line-height: 1.5; }
 .closing-media { width: min(100%, 360px); }
 
 /* Footer */
@@ -581,7 +596,10 @@ ul { margin: 0; padding: 0; list-style: none; }
       <a href="#topics">Sleep</a>
       <a href="#method">How we grade</a>
     </nav>
-    <a class="btn btn--primary btn--sm" href="#protocol">Take the quiz</a>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn btn--ghost btn--sm nav-biz" href="epoch.html">For businesses</a>
+      <a class="btn btn--primary btn--sm" href="#protocol">Take the quiz</a>
+    </div>
   </div>
 </header>
 
@@ -870,6 +888,28 @@ ul { margin: 0; padding: 0; list-style: none; }
     </div>
   </section>
 
+  <!-- EPOCH PROFESSIONAL BAND -->
+  <section class="band band--sage" id="for-businesses" style="padding-block:72px">
+    <div class="wrap biz-band">
+      <div class="biz-copy">
+        <span class="eyebrow">For professionals</span>
+        <h2 class="h-l">The business side of <em>wellness.</em></h2>
+        <p class="biz-lede">If you run a recovery studio, med-spa, wellness club or clinic, Kalivae can introduce you to Epoch's premium recovery technology — the Emersion experience and the Epoch 980 Laser. We help you model the fit and the economics before you buy.</p>
+        <div class="biz-actions">
+          <a class="btn btn--primary" href="epoch.html">Explore the opportunity</a>
+          <a class="btn btn--ghost" href="epoch.html#technology">See the technology</a>
+        </div>
+      </div>
+      <aside class="biz-side">
+        <ul>
+          <li><span class="biz-eyebrow">Epoch Emersion</span><span>Premium recovery experience · packages &amp; membership models</span></li>
+          <li><span class="biz-eyebrow">Epoch 980 Laser</span><span>Professional laser · training &amp; credential guidance</span></li>
+          <li><span class="biz-eyebrow">Fit first</span><span>Conservative utilization models before purchase</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
   <!-- CLOSING -->
   <section class="band" style="padding-top:0">
     <div class="wrap closing">
@@ -894,8 +934,8 @@ ul { margin: 0; padding: 0; list-style: none; }
         <p>Longevity, skin and supplement research, rated in plain English.</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#topics">Longevity</a></li><li><a href="#topics">Skin</a></li><li><a href="#topics">Supplements</a></li><li><a href="#topics">Sleep &amp; recovery</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="#method">How our ratings work</a></li><li><a href="#faq">About us</a></li><li><a href="#faq">Contact</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="methodology.html">How we grade</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="#faq">Contact</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="methodology.html">How we grade</a></li><li><a href="epoch.html">For businesses</a></li><li><a href="#faq">About us</a></li><li><a href="#faq">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="#faq">Contact</a></li></ul></div>
     </div>
     <div class="legal">
       <p class="signoff">Age well. Know why.</p>
