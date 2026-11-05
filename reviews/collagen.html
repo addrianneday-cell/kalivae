@@ -11,35 +11,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../page.css">
+  <link rel="stylesheet" href="reviews.css">
   <style>
-    /* Review-article extensions on top of page.css */
-    .wrap { max-width: 760px; }
-    .rating-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; padding: 18px 0 32px; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); margin: 36px 0 44px; }
-    .rating-row .r-label { font: 500 12px/16px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-    .grade { display: inline-flex; align-items: center; justify-content: center; padding: 8px 20px 9px; font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #15201D; white-space: nowrap; border-radius: 6px; }
-    .grade--strong { background: linear-gradient(100deg, #B8964F, #EDD9A3, #CDAE6A, #EDD9A3, #B8964F); }
-    .grade--moderate { background: linear-gradient(100deg, #A6ABAD, #ECEEEF, #C3C8CA, #ECEEEF, #A6ABAD); }
-    .grade--limited { background: linear-gradient(100deg, #B98A5E, #E8C49C, #C99766, #E8C49C, #B98A5E); }
+    /* Collagen page keeps its multi-row 'takeaways' box and its reviewer avatar — not used elsewhere yet */
     .takeaways { background: var(--sunken); border-radius: 18px; padding: 28px 30px; margin: 40px 0; }
     .takeaways h2 { margin-top: 0; font-size: 22px; line-height: 1.2; margin-bottom: 14px; }
     .takeaways ul { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; }
     .takeaways li { margin: 0; font-size: 16px; line-height: 1.55; }
-    .outcomes { width: 100%; border-collapse: collapse; font-size: 15px; margin: 24px 0; }
-    .outcomes th, .outcomes td { text-align: left; padding: 12px 14px; border-bottom: 1px dashed var(--line); vertical-align: middle; }
-    .outcomes th { font: 600 12px/16px var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-    .outcomes tbody tr:last-child td { border-bottom: 0; }
-    .meta-row { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); margin: 20px 0 0; }
-    .meta-row strong { color: var(--ink); font-weight: 600; }
     .reviewer { display: inline-flex; gap: 10px; align-items: center; }
     .reviewer .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); color: var(--brand); display: grid; place-items: center; font: 600 12px/1 var(--sans); flex: none; }
-    .refs { border-top: 1px dashed var(--line); padding-top: 24px; margin-top: 56px; font-size: 14.5px; }
-    .refs h2 { font-size: 20px; margin-bottom: 14px; }
-    .refs ol { padding-left: 1.4em; display: grid; gap: 10px; color: var(--muted); }
-    .refs em { color: var(--ink); font-style: italic; }
-    .safety { border: 1px solid #A23B2C; border-radius: 16px; padding: 18px 24px; margin: 32px 0; }
-    .safety h3 { display: flex; align-items: center; gap: 8px; font: 600 15px/22px var(--sans); color: #A23B2C; margin: 0 0 8px; }
-    .safety p, .safety ul { margin-bottom: 0; }
-    .safety ul { padding-left: 1.2em; }
   </style>
 </head>
 <body>
@@ -49,7 +29,7 @@
         <svg viewBox="0 0 32 32" aria-hidden="true"><path class="mark-stem" d="M7 25L2.5 29.5"/><path class="mark-a" d="M6 26C5 14 13 4.5 29 3C29.5 18 20 27.5 6 26Z"/><path class="mark-b" d="M7.5 24.5L24 8M12 19.5L11 13.5M12 19.5L18 20.5M16.5 15L16 9.5M16.5 15L22 15.5M20.5 11L20.5 7.5M20.5 11L24.5 11"/></svg>
         <span>Kalivae</span>
       </a>
-      <a class="back" href="/">← Back to Kalivae</a>
+      <a class="back" href="/reviews/">← All reviews</a>
     </div>
   </header>
 
